@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # for passenger gem:
-gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
+#gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 gem "haml"
 gem 'friendly_id', '~> 5.1.0'
 gem 'devise', '~> 4.3'
