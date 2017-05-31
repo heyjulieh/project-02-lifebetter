@@ -3,11 +3,9 @@
 <p><%= @user.first_name %> <%=@user.last_name %></p>
 
 <% @tips.each do |tip| %>
-  <div class="user tip">
-    <div> <%= tip.title %> </div>
-    <div> <%= tip.content %> </div>
-    <div> delete <span> edit </span> </div>
+  <div class="usertip">
+    <div class="usertip-title"> <%= tip.title %> </div>
+    <div class="usertip-content"> <%= tip.content %> </div>
+    <div class="usertip-options"> delete <span class="edit"> edit </span> </div>
   </div>
 <% end %>
-
-<%= console %>
