@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :tips
+    #authenticated :user do
+      #root 'index#index', as: :authenticated_root
+    #end
 
+  resources :tips
   root 'index#index'
 
   get '/users/', to: 'users#index', as: 'users'
