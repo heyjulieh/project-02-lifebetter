@@ -2,10 +2,15 @@
 <h3>TIPS by YOU!</h3>
 <p><%= @user.first_name %> <%=@user.last_name %></p>
 
-<% @tips.each do |tip| %>
-  <div class="usertip">
-    <div class="usertip-title"> <%= tip.title %> </div>
-    <div class="usertip-content"> <%= tip.content %> </div>
-    <div class="usertip-options"> delete <span class="edit"> edit </span> </div>
-  </div>
+
+<% if request.original_url.split("/").last != "new" %>
+  <% @tips.each do |tip| %>
+    <div class="usertip">
+      <div class="usertip-title"> <%= tip.title %> </div>
+      <div class="usertip-content"> <%= tip.content %> </div>
+      <div class="usertip-options"> delete <span class="edit"> edit </span> </div>
+    </div>
+    <% end %>
+  <% else %>
+    <%= render "form" %>
 <% end %>
