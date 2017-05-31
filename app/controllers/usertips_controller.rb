@@ -4,7 +4,6 @@ class UsertipsController < ApplicationController
   def new
     @user = User.find params[:user_id]
     @tip = Tip.new
-    render :template => 'users/show'
   end
 
   # post '/users/:user_id/tips', to: 'usertips#create'
@@ -14,6 +13,7 @@ class UsertipsController < ApplicationController
     if @tip.save
       @user.tips << @tip
       redirect_to user_path(@user)
+      flash[:notice] = "Tip successfully saved!"
     else
       flash[:error] = @tip.errors.full.messages.join(" ")
        # add flash <% %> into template!
@@ -29,17 +29,18 @@ class UsertipsController < ApplicationController
   # patch '/users/:user_id/tips/:id', to: 'usertips#update'
   def update
     user = User.find params[:user_id]
-    tip = Tip.find params[:id]
+    tip = user.tips.find params[:id]
     tip.update_attributes(tip_params)
-    # user.tips << tip.update_attributes(tip_params)?
-    redirect_to user_path(@user)
+    redirect_to user_path(user)
   end
 
   # delete '/users/:user_id/tips/:id', to: 'usertips#destroy'
   def destroy
-    tip = Tip.find params[:id]
+    user = User.find params[:user_id]
+    tip = user.tips.find params[:id]
+    # tip = user.tips.find params[:id]
     tip.destroy
-    redirect_to user_path(@user)
+    redirect_to user_path(user), :notice => "Deleted!"
   end
 
   private
