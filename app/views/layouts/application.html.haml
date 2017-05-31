@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %title Lifebetter
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body
+    %header
+      .jumbotron
+        .pull-right
+          %button.hidden#login login
+          %button.hidden#logout logout
+          %button.hidden#signup sign up
+        .text-center
+          %ul
+            %li.life LIFE
+            %li.better better
+    <!-- next two lines are for devise gem: -->
+    %p.notice= notice
+    %p.alert= alert
+    = yield
+    %footer
+      .footer
+        %ul
+          %li ABOUT
+          %li CONTACT US
+          %li JJAM x GA 2017 / all rights reserved
+        .pull-right
+          %p logo here

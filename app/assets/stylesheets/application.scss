@@ -1,0 +1,131 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Quicksand:300,400,500,700|Teko:300,400,500,600,700');
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+$yellow-gold: #F2C94C;
+$muted-gold: #DFCA8A;
+$light-grey: #E0E0E0;
+$dark-grey: #4F4F4F;
+$black-grey: #333333;
+$sky-blue: #2D98DF;
+$life-red: #E92828;
+
+.jumbotron {
+   margin-top: 0px;
+   background-color: $life-red;
+   color: white;
+     ul {
+       list-style-type: none;
+     }
+     li {
+       display: inline-block;
+     }
+     .life {
+       font-family: 'Teko', sans-serif;
+       font-weight: 600;
+       font-size: 90px;
+       margin-right: 10px;
+     }
+     .better {
+       font-family: 'Quicksand', sans-serif;
+       font-weight: 200;
+       font-size: 80px;
+     }
+     button {
+       border-style: none;
+       padding: 10px 15px 10px 15px;
+       font-family: 'Nunito Sans', sans-serif;
+       color: white;
+
+     }
+     #login {
+       border-color: $sky-blue;
+       background-color: $sky-blue;
+       margin-right: 3px;
+     }
+     #logout {
+       border-color: $dark-grey;
+       background-color: $dark-grey;
+       margin-right: 3px;
+     }
+     #signup {
+       border-color: $yellow-gold;
+       background-color: $yellow-gold;
+       margin-right: 15px;
+     }
+}
+
+.footer {
+  bottom: 0px;
+  height: 130px;
+  left: 0;
+  right: 0;
+  background-color: $dark-grey;
+  color: white;
+  padding-top: 15px;
+  margin-top: 30px;
+  ul {
+    list-style-type: none;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  li {
+    padding-top: 10px;
+  }
+  .pull-right {
+    margin-right: 15px;
+    margin-top: -60px;
+  }
+}
+.user-false {
+  h3 {
+    font-family: 'Teko', sans-serif;
+    font-size: 40px;
+    color: $sky-blue;
+  }
+  .large-tip {
+    background-color:$yellow-gold;
+    height: 300px;
+    padding: 20px;
+  }
+  h4 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+    font-size: 25px;
+    color: $life-red;
+    text-align: center;
+  }
+  h5 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    text-align: justify;
+  }
+}
+.user-true {
+  width: 100%;
+  .col-sm-4 {
+    background-color: $black-grey;
+    color: white;
+    border: 30px solid white;
+    height: 300px;
+    padding-bottom: 15px;
+  }
+  input, textarea {
+    background-color: $yellow-gold;
+    border-style: none;
+    margin: 5px;
+  }
+}
