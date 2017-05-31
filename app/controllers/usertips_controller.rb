@@ -31,6 +31,7 @@ class UsertipsController < ApplicationController
     user = User.find params[:user_id]
     tip = user.tips.find params[:id]
     tip.update_attributes(tip_params)
+    flash[:notice] = "Tip successfully updated!"
     redirect_to user_path(user)
   end
 
@@ -40,7 +41,8 @@ class UsertipsController < ApplicationController
     tip = user.tips.find params[:id]
     # tip = user.tips.find params[:id]
     tip.destroy
-    redirect_to user_path(user), :notice => "Deleted!"
+    redirect_to user_path(user)
+    flash[:notice] = "Deleted!"
   end
 
   private

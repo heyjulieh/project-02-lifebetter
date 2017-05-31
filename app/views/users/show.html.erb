@@ -7,7 +7,7 @@
     <div class="usertip-title"> <%= tip.title %> </div>
     <div class="usertip-content"> <%= tip.content %> </div>
     <div class="usertip-options">
-      <%= link_to "Delete", delete_user_tip_path(@user, tip), data: { confirm: "are you sure?" }%>
+      <%= link_to "Delete", delete_user_tip_path(@user.id, tip.id), data: { confirm: "are you sure?" }, method: :delete %>
       <%= link_to "Edit", edit_user_tip_path(@user.id, tip.id)%>
     </div>
   </div>

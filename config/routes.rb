@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/users/:user_id/tips', to: 'usertips#index', as: 'user_tips'
   get '/users/:user_id/tips/new', to: 'usertips#new', as: 'new_user_tip'
-  post '/users/:user_id/tips', to: 'usertips#create'
+  post '/users/:user_id/tips', to: 'usertips#create', as: 'create_user_tip'
   get '/users/:user_id/tips/:id', to: 'usertips#show', as: 'user_tip'
   get '/users/:user_id/tips/:id/edit', to: 'usertips#edit', as: 'edit_user_tip'
   patch '/users/:user_id/tips/:id', to: 'usertips#update', as: 'update_user_tip'
