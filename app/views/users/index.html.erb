@@ -1,4 +1,9 @@
-<% @users.each do |user| %>
-  <h1><%= user.first_name %> <%=user.id %></h1>
+<h1>List of Users</h1>
+
+<p>Maybe restrict this page for page admins? </p>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>Name: <%= user.first_name %> <%=user.last_name %>. ID: <%=user.id%></li>
   <% end %>
-  <%= console %>
+</ul>
