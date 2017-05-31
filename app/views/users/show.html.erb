@@ -1,4 +1,13 @@
 <h1>LIFE better</h1>
 <h3>TIPS by YOU!</h3>
-<p><%= @user.first_name %> <%=@user.last_name %></p> 
+<p><%= @user.first_name %> <%=@user.last_name %></p>
+
+<% @tips.each do |tip| %>
+  <div class="user tip">
+    <div> <%= tip.title %> </div>
+    <div> <%= tip.content %> </div>
+    <div> delete <span> edit </span> </div>
+  </div>
+<% end %>
+
 <%= console %>
