@@ -36,13 +36,13 @@ $life-red: #E92828;
      .life {
        font-family: 'Teko', sans-serif;
        font-weight: 600;
-       font-size: 80px;
+       font-size: 90px;
        margin-right: 10px;
      }
      .better {
        font-family: 'Quicksand', sans-serif;
        font-weight: 200;
-       font-size: 70px;
+       font-size: 80px;
      }
      button {
        border-style: none;
@@ -72,11 +72,11 @@ $life-red: #E92828;
   bottom: 0px;
   height: 130px;
   left: 0;
-  position: absolute;
   right: 0;
   background-color: $dark-grey;
   color: white;
   padding-top: 15px;
+  margin-top: 30px;
   ul {
     list-style-type: none;
     font-family: 'Nunito Sans', sans-serif;
@@ -87,5 +87,45 @@ $life-red: #E92828;
   .pull-right {
     margin-right: 15px;
     margin-top: -60px;
+  }
+}
+.user-false {
+  h3 {
+    font-family: 'Teko', sans-serif;
+    font-size: 40px;
+    color: $sky-blue;
+  }
+  .large-tip {
+    background-color:$yellow-gold;
+    height: 300px;
+    padding: 20px;
+  }
+  h4 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+    font-size: 25px;
+    color: $life-red;
+    text-align: center;
+  }
+  h5 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    text-align: justify;
+  }
+}
+.user-true {
+  width: 100%;
+  .col-sm-4 {
+    background-color: $black-grey;
+    color: white;
+    border: 30px solid white;
+    height: 300px;
+    padding-bottom: 15px;
+  }
+  input, textarea {
+    background-color: $yellow-gold;
+    border-style: none;
+    margin: 5px;
   }
 }
