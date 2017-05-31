@@ -51,6 +51,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   # rspec needs gem
+  gem 'rspec', "~> 3.6.0"    # added this because 'LoadError: cannot load such file -- rspec'
   gem 'rspec-rails', '~> 3.5'
 end
 
