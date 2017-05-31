@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
+
   resources :tips
+
+  root 'index#index'
+
+ 
+
+
   get '/users/:user_id/tips', to: 'usertips#index', as: 'user_tips'
   get '/users/:user_id/tips/new', to: 'usertips#new', as: 'new_user_tip'
   post '/users/:user_id/tips', to: 'usertips#create'
