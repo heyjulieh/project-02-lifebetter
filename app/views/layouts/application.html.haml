@@ -10,9 +10,10 @@
     %header
       .jumbotron
         .pull-right
-          %button.hidden#login login
-          %button.hidden#logout logout
-          %button.hidden#signup sign up
+          = link_to "Profile", current_user
+          %button#login login
+          %button#logout logout
+          %button#signup sign up
         .text-center
           %ul
             %li.life LIFE
