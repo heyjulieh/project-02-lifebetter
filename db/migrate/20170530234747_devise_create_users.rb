@@ -22,7 +22,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       # Confirmable
       t.string :name
       t.string   :confirmation_token
-      t.datetime :confirmed_at
+      # t.datetime :confirmed_at   #don't use - messes up running seed
       t.datetime :confirmation_sent_at
       t.string   :unconfirmed_email # Only if using reconfirmable
 
