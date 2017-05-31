@@ -1,0 +1,28 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div.usertip {
+  width: 400px;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+div.usertip-title {
+  font-weight: bold
+}
+
+div.usertip-content {
+  padding: 20px;
+}
+
+div.usertip-options {
+  text-align: right;
+}
+
+span.edit {
+  margin-left: 20px;
+}
