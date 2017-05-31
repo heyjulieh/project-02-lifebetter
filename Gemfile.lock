@@ -196,7 +196,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  better_errors
   bootstrap-sass (~> 3.3.6)
   byebug
   capybara (~> 2.13)
