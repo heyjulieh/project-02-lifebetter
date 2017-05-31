@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title Lifebetter
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body
+    <!-- next two lines are for devise gem: -->
+    %p.notice= notice
+    %p.alert= alert
+    %header
+      .jumbotron
+        .pull-right
+          %button.hidden#login login
+          %button.hidden#logout logout
+          %button.hidden#signup sign up
+        .align-center
+          %ul
+            %li.life LIFE
+            %li.better better
+    = yield
