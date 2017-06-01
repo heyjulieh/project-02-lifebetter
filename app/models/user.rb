@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :tips, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
+
          :recoverable, :rememberable, :trackable, :validatable#,:lockable ,:confirmable
 
   def email_required?
@@ -17,5 +18,4 @@ class User < ApplicationRecord
   def email_changed?
    false
   end
-
 end

@@ -10,7 +10,6 @@
     %header
       .jumbotron
         .pull-right
-
           =button_to "login", new_user_session_path
           =button_to "logout", destroy_user_session_path, :method => :delete
           =button_to "signup", new_user_registration_path, :method => :get
@@ -20,8 +19,9 @@
             %li.life LIFE
             %li.better better
 
-        %span.notice= notice
-        %span.alert= alert
+    -# next two lines are for devise gem:
+    %span.notice= notice
+    %span.alert= alert
 
     = yield
     %footer
