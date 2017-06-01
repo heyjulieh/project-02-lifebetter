@@ -48,7 +48,7 @@ class UsertipsController < ApplicationController
   private
 
   def tip_params
-    params.require(:tip).permit(:genre, :title, :content)
+    params.require(:tip).permit(:genre, :title, :content, :avatar)
   end
 
   # below routes are defined, but i don't know if we need them (-jane)

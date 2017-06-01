@@ -48,6 +48,8 @@
         = tip.title
       .usertip-content
         = tip.content
+      .usertip-image
+        = image_tag tip.avatar.url, class: "img-responsive"
       .usertip-options
         = link_to "Delete", delete_user_tip_path(@user.id, tip.id), data: { confirm: "are you sure?" }, method: :delete
         = link_to "Edit", edit_user_tip_path(@user.id, tip.id)
