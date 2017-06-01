@@ -1,15 +1,17 @@
-.container.user-false
-  %h4 Find out more life tips by signing up or logging in!
-  %br
-  %h3 LIFE TIP OF THE DAY
-  .large-tip
-    -# image here
-    -# pull in important and most thumbs up tip here
-    -# for now, this is placeholder stuff
-    %h5 Use coconut oil in your hair once a week to get super soft hair that lasts a month!
-    %h5.pull-right -User1234
+-if current_user.nil?
 
+  .container.user-false
+    %h4 Find out more life tips by signing up or logging in!
+    %br
+    %h3 LIFE TIP OF THE DAY
+    .large-tip
+      -# image here
+      -# pull in important and most thumbs up tip here
+      -# for now, this is placeholder stuff
+      %h5 Use coconut oil in your hair once a week to get super soft hair that lasts a month!
+      %h5.pull-right -User1234
 
+-else
 .container.user-true
   .col-sm-4#bigtip Use coconut oil in your hair once a week to get super soft hair that lasts a month!
   .col-sm-4= link_to image_tag( 'beauty1.jpg'), 'http://www.google.com'

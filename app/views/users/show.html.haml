@@ -1,0 +1,17 @@
+.container
+  %h1.usertip-header TIPS by YOU!
+
+.container.usertip-cont
+  %p
+    = @user.first_name
+    = @user.last_name
+  - @tips.each do |tip|
+    .usertip
+      .usertip-title
+        = tip.title
+      .usertip-content
+        = tip.content
+      .usertip-options
+        = link_to "Delete", delete_user_tip_path(@user.id, tip.id), data: { confirm: "are you sure?" }, method: :delete
+        = link_to "Edit", edit_user_tip_path(@user.id, tip.id)
+  = link_to "Add New Tip", new_user_tip_path
