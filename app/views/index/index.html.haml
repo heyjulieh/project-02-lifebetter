@@ -13,7 +13,7 @@
 .container-fluid.user-true
   .row.justify-content-center
     .col-sm-4.align-self-center
-      .bigtip Use coconut oil in your hair once a week to get super soft hair that lasts a month!
+      %h4.bigtip Use coconut oil in your hair once a week to get super soft hair that lasts a month!
       .text tip of the day
     .col-sm-4.align-self-center
       = link_to image_tag( 'beauty1.jpg'), 'http://www.google.com'
@@ -35,4 +35,4 @@
       %input{:placeholder => "Title"}
       %input{:placeholder => "Genre"}
       %textarea{:placeholder => "Add your tip! (10,000 words max.)", :type => "text-area"}
-    %button.index-btn.pull-right submit
+    %button.form-btn.pull-right submit

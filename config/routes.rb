@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  get 'new/genre'
+
   devise_for :users
 
     #authenticated :user do
       #root 'index#index', as: :authenticated_root
     #end
-
+  resources :genres
   resources :tips
   root 'index#index'
 

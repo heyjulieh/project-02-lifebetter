@@ -1,0 +1,40 @@
+-# Navbar Start
+.row.profile
+  .col-md-2
+    .profile-sidebar
+      -# User Title
+      .profile-usertitle
+        .profile-usertitle-name
+          %a{:href => "#"}
+            User1234
+
+      -# User Pic
+      .profile-userpic
+        %a{:href => "#"}
+          %img.img-responsive{:alt => "", :src => "https://files.slack.com/files-tmb/T0351JZQ0-F5HHG3EN4-7f9ab0f32e/seijin_480.png"}
+
+      -# Menu
+      .profile-usermenu
+        %ul.nav
+          %li
+            %a{:href => "#"}
+              Beauty
+          %li
+            %a{:href => "#", :target => "_blank"}
+              Creativity/Art
+          %li
+            %a{:href => "#"}
+              Fitness/Health
+          %li
+            %a{:href => "#"}
+              Food
+          %li
+            %a{:href => "#"}
+              Living/Apt/home
+          %li
+            %a{:href => "#"}
+              Travel
+-# End Navbar
+
+.row.content
+  .col-md-10
