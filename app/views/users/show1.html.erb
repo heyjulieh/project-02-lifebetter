@@ -1,0 +1,15 @@
+<h3>TIPS by YOU!</h3>
+<p><%= @user.first_name %> <%=@user.last_name %></p>
+
+<% @tips.each do |tip| %>
+  <div class="usertip">
+    <div class="usertip-title"> <%= tip.title %> </div>
+    <div class="usertip-content"> <%= tip.content %> </div>
+    <div class="usertip-options">
+      <%= link_to "Delete", delete_user_tip_path(@user.id, tip.id), data: { confirm: "are you sure?" }, method: :delete %>
+      <%= link_to "Edit", edit_user_tip_path(@user.id, tip.id)%>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to "Add New Tip", new_user_tip_path %>

@@ -1,0 +1,59 @@
+-# Navbar Start
+.row.profile
+  .col-md-2
+    .profile-sidebar
+      -# User Title
+      .profile-usertitle
+        .profile-usertitle-name
+          %a{:href => "#"}
+            = @user.first_name
+            = @user.last_name
+
+      -# User Pic
+      .profile-userpic
+        %a{:href => "#"}
+          %img.img-responsive{:alt => "", :src => "https://files.slack.com/files-tmb/T0351JZQ0-F5HHG3EN4-7f9ab0f32e/seijin_480.png"}
+
+      -# Menu
+      .profile-usermenu
+        %ul.nav.add_tip
+          = link_to "Add New Tip", new_user_tip_path
+        %ul.nav
+          %li
+            %a{:href => "#"}
+              Beauty
+          %li
+            %a{:href => "#", :target => "_blank"}
+              Creativity/Art
+          %li
+            %a{:href => "#"}
+              Fitness/Health
+          %li
+            %a{:href => "#"}
+              Food
+          %li
+            %a{:href => "#"}
+              Living/Apt/home
+          %li
+            %a{:href => "#"}
+              Travel
+
+  .col-md-10
+    .container.tipsbyyou
+      %h1 TIPS by YOU!
+
+      - @tips.each do |tip|
+        .container.tips
+          .usertip
+            .usertip-title
+              = tip.title
+            .container.content
+              .usertip-content
+                = tip.content
+            .usertip-options.pull-right
+              = link_to 'delete_user_tip_path(@user.id, tip.id)', data: { confirm: "are you sure?" }, method: :delete do
+                %span.glyphicon.glyphicon-remove
+              = link_to 'edit_user_tip_path(@user.id, tip.id)' do
+                %span.glyphicon.glyphicon-pencil
+            .tip-timestamp.pull-right
+              = tip.created_at.strftime("%a, %B %d, %Y")

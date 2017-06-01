@@ -1,0 +1,316 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Quicksand:300,400,500,700|Teko:300,400,500,600,700');
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+$yellow-gold: #F2C94C;
+$muted-gold: #DFCA8A;
+$light-grey: #E0E0E0;
+$dark-grey: #4F4F4F;
+$black-grey: #333333;
+$sky-blue: #2D98DF;
+$life-red: #E92828;
+
+// template
+.jumbotron {
+   margin-top: 0px;
+   width: 100%;
+   background-color: $life-red;
+   color: white;
+     ul {
+       list-style-type: none;
+     }
+     li {
+       display: inline-block;
+     }
+     .text-center {
+       margin-top: 10px;
+     }
+       .life {
+         font-family: 'Teko', sans-serif;
+         font-weight: 600;
+         font-size: 90px;
+         margin-right: 10px;
+       }
+       .better {
+         font-family: 'Quicksand', sans-serif;
+         font-weight: 200;
+         font-size: 80px;
+       }
+     .button_to {
+       margin-top: -50px;
+       display: inline-block;
+     }
+     input {
+       width: 100%;
+       margin: auto;
+       border-style: none;
+       padding: 10px 15px 10px 15px;
+       font-family: 'Nunito Sans', sans-serif;
+       color: white;
+       background-color: $yellow-gold;
+     }
+     .button_to {
+       border-style: none;
+       padding: 10px 15px 10px 15px;
+       font-family: 'Nunito Sans', sans-serif;
+       color: black;
+     }
+     .pull-right {
+       display: inline-block;
+       margin-top: -25px;
+       margin-right: 10px;
+     }
+}
+.footer {
+  bottom: 0px;
+  height: 130px;
+  left: 0;
+  right: 0;
+  background-color: $dark-grey;
+  color: white;
+  padding-top: 15px;
+  margin-top: 50px;
+  ul {
+    list-style-type: none;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  li {
+    padding-top: 10px;
+  }
+  .pull-right {
+    margin-right: 15px;
+    margin-top: -60px;
+  }
+}
+
+// index/landing page
+.user-false {
+  h3 {
+    font-family: 'Teko', sans-serif;
+    font-size: 40px;
+    color: $sky-blue;
+  }
+  .large-tip {
+    background-color:$yellow-gold;
+    height: 300px;
+    padding: 20px;
+  }
+  h4 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+    font-size: 25px;
+    color: $life-red;
+    text-align: center;
+  }
+  h5 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    text-align: justify;
+  }
+}
+.user-true {
+  margin-top: 20px;
+  width: 100%;
+  .row {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .col-sm-4 {
+    display: inline-block;
+    width: 495px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    float: none;
+  }
+  h4 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+    font-size: 25px;
+    color: $life-red;
+    text-align: left;
+  }
+  .bigtip {
+    display: inline-block;
+    background-color: $yellow-gold;
+    color: $black-grey;
+    width: 465px;
+    height: 310px;
+    margin: auto;
+    padding: 15px;
+  }
+  img {
+    text-align: center;
+    display: inline-block;
+    width: 465px;
+    margin: auto;
+  }
+  .text {
+    background-color: $black-grey;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+  }
+  input, textarea {
+    background-color: $yellow-gold;
+    border-style: none;
+    margin-bottom: 10px;
+    width: 100%;
+    display: block;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    padding-left: 10px;
+  }
+  textarea {
+    height: 250px;
+  }
+  .form-btn {
+    border-style: none;
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    background-color: $sky-blue;
+    margin-right: 15px;
+    display: block;
+  }
+  .formgroup{
+    margin-top: 80px;
+    width: 50%;
+    margin: auto;
+  }
+}
+
+// navbar
+/* Profile container */
+.profile {
+  margin-top: -60px;
+  display: inline-block;
+  height: 100%;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 15px 0 15px 0;
+  background: $life-red;
+  height: 100%;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 15px;
+  background-color: $life-red
+}
+
+.profile-usertitle-name {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-decoration: none;
+    a {
+      color: white;
+    }
+    a:hover {
+      color: $yellow-gold;
+      text-decoration: none;
+    }
+}
+
+.profile-usermenu {
+  background-color: $life-red;
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li a {
+  color: white;
+  background-color: $life-red;
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 200;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: $black-grey;
+}
+
+.tipsbyyou {
+  display: inline-block;
+  margin-top: 50px;
+    h1 {
+      font-family: 'Teko', sans-serif;
+      font-weight: 500;
+      font-size: 50px;
+    }
+}
+.add_tip {
+  a {
+    color: $yellow-gold;
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 10px;
+  }
+    a:hover{
+      color: white;
+      text-decoration: none;
+    }
+}
+
+.tips {
+  display: inline-block;
+  background-color: lightgrey;
+  height: 200px;
+  margin: 10px;
+  width: 100%;
+  font-family: 'Nunito Sans', sans-serif;
+  border: 2px;
+  border-radius: 0.5;
+    .usertip-title {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin: 5px;
+    }
+    .content {
+      background-color: white;
+      font-size: 16px;
+      height: 100px;
+      margin: 5px;
+      .usertip-content {
+        margin: 10px;
+      }
+    }
+    .tip-timestamp {
+      margin-right: 10px;
+    }
+}

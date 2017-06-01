@@ -12,8 +12,11 @@ gem 'rails', '~> 5.1.1'
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
 # gem 'puma', '~> 3.7'   #comment out for passenger gem
+gem 'jquery-rails', '~> 4.3.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Bootstrap
+gem 'bootstrap-sass', '~> 3.3.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -21,8 +24,10 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 #gem 'turbolinks', '~> 5'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -38,7 +43,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.3'
 gem "haml"
 gem 'friendly_id', '~> 5.1.0'
-gem 'devise', '~> 4.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,6 +50,11 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  # rspec needs gem
+  gem 'rspec', "~> 3.6.0"    # added this because 'LoadError: cannot load such file -- rspec'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'  # to fix 'NoMethodError:' for testing controllers
+
 end
 
 group :development do
@@ -56,8 +65,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  # added new gem
-  gem "better_errors"
+  # better errors gem
+  # gem "better_errors"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
