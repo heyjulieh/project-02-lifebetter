@@ -35,26 +35,33 @@ $life-red: #E92828;
      li {
        display: inline-block;
      }
-     .life {
-       font-family: 'Teko', sans-serif;
-       font-weight: 600;
-       font-size: 90px;
-       margin-right: 10px;
+     .text-center {
+       margin-top: 10px;
      }
-     .better {
-       font-family: 'Quicksand', sans-serif;
-       font-weight: 200;
-       font-size: 80px;
+       .life {
+         font-family: 'Teko', sans-serif;
+         font-weight: 600;
+         font-size: 90px;
+         margin-right: 10px;
+       }
+       .better {
+         font-family: 'Quicksand', sans-serif;
+         font-weight: 200;
+         font-size: 80px;
+       }
+     .button_to {
+       margin-top: -50px;
+       display: inline-block;
      }
      input {
-       display: inline-block;
-       float: right;
+       width: 100%;
        margin: auto;
        border-style: none;
        padding: 10px 15px 10px 15px;
        font-family: 'Nunito Sans', sans-serif;
        color: white;
-       background-color: $yellow-gold
+       background-color: $yellow-gold;
+     }
      .button_to {
        border-style: none;
        padding: 10px 15px 10px 15px;
@@ -63,7 +70,8 @@ $life-red: #E92828;
      }
      .pull-right {
        display: inline-block;
-       margin: auto;
+       margin-top: -25px;
+       margin-right: 10px;
      }
 }
 .footer {
@@ -88,7 +96,7 @@ $life-red: #E92828;
   }
 }
 
-// index
+// index/landing page
 .user-false {
   h3 {
     font-family: 'Teko', sans-serif;
@@ -128,6 +136,13 @@ $life-red: #E92828;
     margin-bottom: 15px;
     float: none;
   }
+  h4 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+    font-size: 25px;
+    color: $life-red;
+    text-align: left;
+  }
   .bigtip {
     display: inline-block;
     background-color: $yellow-gold;
@@ -135,6 +150,7 @@ $life-red: #E92828;
     width: 465px;
     height: 310px;
     margin: auto;
+    padding: 15px;
   }
   img {
     text-align: center;
@@ -164,10 +180,11 @@ $life-red: #E92828;
   textarea {
     height: 250px;
   }
-  .index-btn {
+  .form-btn {
     border-style: none;
     font-family: 'Nunito Sans', sans-serif;
     color: white;
+    background-color: $sky-blue;
     margin-right: 15px;
     display: block;
   }
@@ -176,4 +193,69 @@ $life-red: #E92828;
     width: 50%;
     margin: auto;
   }
+}
+
+// navbar
+/* Profile container */
+.profile {
+  margin-top: -100px;
+  height: 100%;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 15px 0 15px 0;
+  background: $life-red;
+  height: 100%;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 15px;
+  background-color: $life-red
+}
+
+.profile-usertitle-name {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Teka', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-decoration: none;
+    a {
+      color: white;
+    }
+    a:hover {
+      color: $yellow-gold;
+      text-decoration: none;
+    }
+}
+
+.profile-usermenu {
+  background-color: $life-red;
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li a {
+  float: left;
+  color: white;
+  background-color: $life-red;
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 200;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: $black-grey;
 }
