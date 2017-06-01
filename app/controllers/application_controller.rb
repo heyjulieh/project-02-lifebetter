@@ -20,5 +20,5 @@ def confirm_logged_in
         return true
     end
 end
-  include SessionsHelper
+  
 end
