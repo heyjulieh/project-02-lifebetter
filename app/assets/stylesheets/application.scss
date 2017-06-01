@@ -284,3 +284,33 @@ $life-red: #E92828;
       text-decoration: none;
     }
 }
+
+.tips {
+  display: inline-block;
+  background-color: lightgrey;
+  height: 200px;
+  margin: 10px;
+  width: 100%;
+  font-family: 'Nunito Sans', sans-serif;
+  border: 2px;
+  border-radius: 0.5;
+    .usertip-title {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin: 5px;
+    }
+    .content {
+      background-color: white;
+      font-size: 16px;
+      height: 100px;
+      margin: 5px;
+      .usertip-content {
+        margin: 10px;
+      }
+    }
+    .tip-timestamp {
+      margin-right: 10px;
+    }
+}

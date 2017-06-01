@@ -42,13 +42,18 @@
     .container.tipsbyyou
       %h1 TIPS by YOU!
 
-      .container.tips
-        - @tips.each do |tip|
+      - @tips.each do |tip|
+        .container.tips
           .usertip
             .usertip-title
               = tip.title
-            .usertip-content
-              = tip.content
-            .usertip-options
-              = link_to "Delete", delete_user_tip_path(@user.id, tip.id), data: { confirm: "are you sure?" }, method: :delete
-              = link_to "Edit", edit_user_tip_path(@user.id, tip.id)
+            .container.content
+              .usertip-content
+                = tip.content
+            .usertip-options.pull-right
+              = link_to 'delete_user_tip_path(@user.id, tip.id)', data: { confirm: "are you sure?" }, method: :delete do
+                %span.glyphicon.glyphicon-remove
+              = link_to 'edit_user_tip_path(@user.id, tip.id)' do
+                %span.glyphicon.glyphicon-pencil
+            .tip-timestamp.pull-right
+              = tip.created_at.strftime("%a, %B %d, %Y")
