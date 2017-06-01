@@ -23,6 +23,7 @@ $black-grey: #333333;
 $sky-blue: #2D98DF;
 $life-red: #E92828;
 
+// template
 .jumbotron {
    margin-top: 0px;
    background-color: $life-red;
@@ -89,6 +90,8 @@ $life-red: #E92828;
     margin-top: -60px;
   }
 }
+
+// index
 .user-false {
   h3 {
     font-family: 'Teko', sans-serif;
@@ -117,15 +120,65 @@ $life-red: #E92828;
 .user-true {
   width: 100%;
   .col-sm-4 {
-    background-color: $black-grey;
     color: white;
     border: 30px solid white;
-    height: 300px;
+    height: 370px;
     padding-bottom: 15px;
+    position: relative;
+  }
+  #bigtip {
+    background-color: $yellow-gold;
   }
   input, textarea {
     background-color: $yellow-gold;
     border-style: none;
-    margin: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    display: block;
+  }
+  textarea {
+    height: 250px;
+  }
+  .index-btn {
+    border-style: none;
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    margin: auto;
+    display: block;
+  }
+  img {
+    display: block;
+    height:310px;
+    margin: auto;
+    transition: .5s ease;
+    position: relative;
+    backface-visibility: hidden;
+  }
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+  }
+    .text {
+    background-color: $black-grey;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+    }
+  .col-sm-4:hover .image {
+  opacity: 0.3;
+  }
+
+  .col-sm-4:hover .middle {
+  opacity: 1;
+  }
+  .formgroup{
+    margin-top: 30px;
+    width: 50%;
+    margin: auto;
   }
 }

@@ -9,19 +9,29 @@
     %h5 Use coconut oil in your hair once a week to get super soft hair that lasts a month!
     %h5.pull-right -User1234
 
-.container.user-true
-  .row
-    .col-sm-4 Use coconut oil in your hair once a week to get super soft hair that lasts a month!
-    .col-sm-4 BEAUTY
-    .col-sm-4 FITNESS/HEALTH
-    .col-sm-4 ART/CREATIVITY
-    .col-sm-4 APT/HOUSE/LIVING
-    .col-sm-4 TRAVEL
 
-    .col-sm-6
+.container.user-true
+  .col-sm-4#bigtip Use coconut oil in your hair once a week to get super soft hair that lasts a month!
+  .col-sm-4= link_to image_tag( 'beauty1.jpg'), 'http://www.google.com'
+  .middle
+    .text beauty
+  .col-sm-4= link_to image_tag( 'exercise1.jpg'), 'http://www.google.com'
+  .middle
+    .text health
+  .col-sm-4= link_to image_tag( 'food3.jpg'), 'http://www.google.com'
+  .middle
+    .text food
+  .col-sm-4= link_to image_tag( 'home4.jpg'), 'http://www.google.com'
+  .middle
+    .text home
+  .col-sm-4= link_to image_tag( 'travel1.jpg'), 'http://www.google.com'
+  .middle
+    .text travel
+  .formgroup
+    .col-m-12
       %input{:placeholder => "Title"}
-    .col-sm-6
+    .col-m-12
       %input{:placeholder => "Genre"}
-    .col-sm-12
+    .col-m-12
       %textarea{:placeholder => "Add your tip! (10,000 words max.)", :type => "text-area"}
-    %button.pull-right submit
+    %button.index-btn.pull-right submit
