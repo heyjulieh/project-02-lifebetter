@@ -6,7 +6,8 @@
       .profile-usertitle
         .profile-usertitle-name
           %a{:href => "#"}
-            User1234
+            = @user.first_name
+            = @user.last_name
 
       -# User Pic
       .profile-userpic
@@ -15,6 +16,8 @@
 
       -# Menu
       .profile-usermenu
+        %ul.nav.add_tip
+          = link_to "Add New Tip", new_user_tip_path
         %ul.nav
           %li
             %a{:href => "#"}
@@ -34,20 +37,18 @@
           %li
             %a{:href => "#"}
               Travel
--# End Navbar
 
-.container
-  %h1.usertip-header TIPS by YOU!
-  %p
-    = @user.first_name
-    = @user.last_name
-  - @tips.each do |tip|
-    .usertip
-      .usertip-title
-        = tip.title
-      .usertip-content
-        = tip.content
-      .usertip-options
-        = link_to "Delete", delete_user_tip_path(@user.id, tip.id), data: { confirm: "are you sure?" }, method: :delete
-        = link_to "Edit", edit_user_tip_path(@user.id, tip.id)
-  = link_to "Add New Tip", new_user_tip_path
+  .col-md-10
+    .container.tipsbyyou
+      %h1 TIPS by YOU!
+
+      .container.tips
+        - @tips.each do |tip|
+          .usertip
+            .usertip-title
+              = tip.title
+            .usertip-content
+              = tip.content
+            .usertip-options
+              = link_to "Delete", delete_user_tip_path(@user.id, tip.id), data: { confirm: "are you sure?" }, method: :delete
+              = link_to "Edit", edit_user_tip_path(@user.id, tip.id)

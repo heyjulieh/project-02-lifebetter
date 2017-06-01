@@ -198,7 +198,8 @@ $life-red: #E92828;
 // navbar
 /* Profile container */
 .profile {
-  margin-top: -100px;
+  margin-top: -60px;
+  display: inline-block;
   height: 100%;
 }
 
@@ -228,7 +229,7 @@ $life-red: #E92828;
 .profile-usertitle-name {
   font-size: 16px;
   font-weight: 500;
-  font-family: 'Teka', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   text-transform: uppercase;
   margin-bottom: 10px;
   text-decoration: none;
@@ -247,7 +248,6 @@ $life-red: #E92828;
 }
 
 .profile-usermenu ul li a {
-  float: left;
   color: white;
   background-color: $life-red;
   font-size: 16px;
@@ -258,4 +258,29 @@ $life-red: #E92828;
 .profile-usermenu ul li a:hover {
   background-color: #fafcfd;
   color: $black-grey;
+}
+
+.tipsbyyou {
+  display: inline-block;
+  margin-top: 50px;
+    h1 {
+      font-family: 'Teko', sans-serif;
+      font-weight: 500;
+      font-size: 50px;
+    }
+}
+.add_tip {
+  a {
+    color: $yellow-gold;
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 10px;
+  }
+    a:hover{
+      color: white;
+      text-decoration: none;
+    }
 }
