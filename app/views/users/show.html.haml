@@ -12,12 +12,13 @@
       -# User Pic
       .profile-userpic
         %a{:href => "#"}
-          %img.img-responsive{:alt => "", :src => "https://files.slack.com/files-tmb/T0351JZQ0-F5HHG3EN4-7f9ab0f32e/seijin_480.png"}
+          = image_tag @user.avatar.url, class: "img-responsive" #size: "150x100" or (:medium)
+          -# %img.img-responsive{:alt => "", :src => "https://files.slack.com/files-tmb/T0351JZQ0-F5HHG3EN4-7f9ab0f32e/seijin_480.png"}
 
       -# Menu
       .profile-usermenu
         %ul.nav.add_tip
-          = link_to "Add New Tip", new_user_tip_path
+          = link_to "Add New Tip", new_user_tip_path(:user_id)
         %ul.nav
           %li
             %a{:href => "#"}
