@@ -10,12 +10,12 @@
     <header>
       <div class="jumbotron">
         <div class="pull-right">
-          <% if current_user.nil? %>
-            <%= button_to "login", new_user_session_path %>
-            <%= button_to "signup", new_user_registration_path, :method => :get %>
+          <% if signed_in? %>
+            <span>Welcome <%= current_user.first_name %>. </span>
+            <%= button_to "Sign Out", destroy_user_session_path, :method => :delete %>
           <% else %>
-            <%= button_to "logout", destroy_user_session_path, :method => :delete %>
-            <span>Welcome <%= current_user.first_name %></span>
+            <%= button_to "Log In", new_user_session_path %>
+            <%= button_to "Sign Up", new_user_registration_path, :method => :get %>
           <% end %>
 
         </div>
@@ -25,6 +25,7 @@
             <li class="better">better</li>
           </ul>
         </div>
+        <!-- devise alerts (login -> invalid) -->
         <span class="notice">
           <%= notice %>
         </span>

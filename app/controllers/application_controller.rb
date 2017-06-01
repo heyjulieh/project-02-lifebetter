@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+def configure_permitted_parameters
+   devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :first_name, :age, :last_name, :location])
+end
+
 #before_action :authenticate_user!
 
 #private
@@ -20,5 +26,5 @@ def confirm_logged_in
         return true
     end
 end
-  
+
 end
