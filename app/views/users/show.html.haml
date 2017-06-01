@@ -11,7 +11,8 @@
       -# User Pic
       .profile-userpic
         %a{:href => "#"}
-          %img.img-responsive{:alt => "", :src => "https://files.slack.com/files-tmb/T0351JZQ0-F5HHG3EN4-7f9ab0f32e/seijin_480.png"}
+          = image_tag @user.avatar.url, class: "img-responsive" #size: "150x100" or (:medium)
+          -# %img.img-responsive{:alt => "", :src => "https://files.slack.com/files-tmb/T0351JZQ0-F5HHG3EN4-7f9ab0f32e/seijin_480.png"}
 
       -# Menu
       .profile-usermenu
@@ -47,6 +48,8 @@
         = tip.title
       .usertip-content
         = tip.content
+      .usertip-image
+        = image_tag tip.avatar.url, class: "img-responsive"
       .usertip-options
         = link_to "Delete", delete_user_tip_path(@user.id, tip.id), data: { confirm: "are you sure?" }, method: :delete
         = link_to "Edit", edit_user_tip_path(@user.id, tip.id)
