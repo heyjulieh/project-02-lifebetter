@@ -43,7 +43,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.3'
 gem "haml"
 gem 'friendly_id', '~> 5.1.0'
-gem 'devise', '~> 4.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,6 +50,9 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  # rspec needs gem
+  gem 'rspec', "~> 3.6.0"    # added this because 'LoadError: cannot load such file -- rspec'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do

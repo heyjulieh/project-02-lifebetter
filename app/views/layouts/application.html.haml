@@ -10,14 +10,15 @@
     %header
       .jumbotron
         .pull-right
-          %button.hidden#login login
-          %button.hidden#logout logout
-          %button.hidden#signup sign up
+          =button_to "login", new_user_session_path
+          =button_to "logout", destroy_user_session_path, :method => :delete
+          =button_to "signup", new_user_registration_path, :method => :get
+          =console
         .text-center
           %ul
             %li.life LIFE
             %li.better better
-    <!-- next two lines are for devise gem: -->
+    -# next two lines are for devise gem:
     %p.notice= notice
     %p.alert= alert
     = yield
