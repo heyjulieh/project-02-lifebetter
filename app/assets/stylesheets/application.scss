@@ -55,13 +55,17 @@ $life-red: #E92828;
        font-family: 'Nunito Sans', sans-serif;
        color: white;
        background-color: $yellow-gold
+     .button_to {
+       border-style: none;
+       padding: 10px 15px 10px 15px;
+       font-family: 'Nunito Sans', sans-serif;
+       color: black;
      }
      .pull-right {
        display: inline-block;
        margin: auto;
      }
 }
-
 .footer {
   bottom: 0px;
   height: 130px;
