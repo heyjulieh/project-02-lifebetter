@@ -24,7 +24,7 @@
     <em>(<%= @minimum_username_length %> characters minimum)</em>
     <% end %><br />
     <%= f.text_field :username, autocomplete: "off" %>
-    
+
   </div>
 
   <div class="field">
@@ -37,7 +37,7 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>

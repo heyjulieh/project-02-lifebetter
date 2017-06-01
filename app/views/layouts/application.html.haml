@@ -14,16 +14,15 @@
           =button_to "login", new_user_session_path
           =button_to "logout", destroy_user_session_path, :method => :delete
           =button_to "signup", new_user_registration_path, :method => :get
-          = console
-          
-         
+
         .text-center
           %ul
             %li.life LIFE
             %li.better better
-    <!-- next two lines are for devise gem: -->
-    %p.notice= notice
-    %p.alert= alert
+
+        %span.notice= notice
+        %span.alert= alert
+
     = yield
     %footer
       .footer
@@ -33,3 +32,5 @@
           %li JJAM x GA 2017 / all rights reserved
         .pull-right
           %p logo here
+
+=console

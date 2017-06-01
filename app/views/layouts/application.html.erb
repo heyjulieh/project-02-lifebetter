@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Lifebetter</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <header>
+      <div class="jumbotron">
+        <div class="pull-right">
+          <% if current_user.nil? %>
+            <%= button_to "login", new_user_session_path %>
+            <%= button_to "signup", new_user_registration_path, :method => :get %>
+          <% else %>
+            <%= button_to "logout", destroy_user_session_path, :method => :delete %>
+            <span>Welcome <%= current_user.first_name %></span>
+          <% end %>
+
+        </div>
+        <div class="text-center">
+          <ul>
+            <li class="life">LIFE</li>
+            <li class="better">better</li>
+          </ul>
+        </div>
+        <span class="notice">
+          <%= notice %>
+        </span>
+        <span class="alert">
+          <%= alert %>
+        </span>
+      </div>
+    </header>
+    <%= yield %>
+    <footer>
+      <div class="footer">
+        <ul>
+          <li>ABOUT</li>
+          <li>CONTACT US</li>
+          <li>JJAM x GA 2017 / all rights reserved</li>
+        </ul>
+        <div class="pull-right">
+          <p>logo here</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<%= console %>
