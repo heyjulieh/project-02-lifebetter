@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/genres/:genre', to: 'genres#show', as: 'genre'
 
   get '/users/', to: 'users#index', as: 'users'
-  get '/users/:username', to: 'users#show', as: 'user'
+  get '/users/:user_id', to: 'users#show', as: 'user'
   get '/users/:user_id/tips/new', to: 'usertips#new', as: 'new_user_tip'
   post '/users/:user_id/tips', to: 'usertips#create', as: 'create_user_tip'
   get '/users/:user_id/tips/:id/edit', to: 'usertips#edit', as: 'edit_user_tip'
