@@ -58,4 +58,10 @@
                   = link_to edit_user_tip_path(current_user.id, tip.id) do
                     %span.glyphicon.glyphicon-pencil
                 .pull-right
+                  = link_to like_tip_path(tip), method: :put do
+                    %span.glyphicon.glyphicon-thumbs-up
+                    = tip.get_upvotes.size
+                  = link_to dislike_tip_path(tip), method: :put do
+                    %span.glyphicon.glyphicon-thumbs-down
+                    = tip.get_downvotes.size
                   = tip.created_at.strftime("%a, %b %d, %Y @ %l:%M %p")
