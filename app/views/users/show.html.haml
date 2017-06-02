@@ -49,7 +49,7 @@
                 .container-fluid.content
                   = tip.content
                   .pull-right
-                    = image_tag tip.avatar.url, height:"140px"
+                    = image_tag tip.avatar.url, height:"190px"
                 .pull-left
                   = tip.genre
                   = link_to delete_user_tip_path(@user.id, tip.id), data: { confirm: "Are you sure you want to delete this tip?" }, method: :delete do
