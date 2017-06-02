@@ -6,6 +6,7 @@ puts "------running Rspec in #{Rails.env} environment-------"
 
 # do not start next line with 'RSpec.' !!! otherwise, looks for two paramaters
 describe UsersController, :type => :controller do
+
   render_views
   before do
     test_host  # so controller#index wont redirect to http://test.host/
@@ -29,5 +30,6 @@ end
 #     user = FactoryGirl.create(:user)
 #     get :index
 #     expect(assigns(:users)).to eq([user])
+
 #   end
 # end

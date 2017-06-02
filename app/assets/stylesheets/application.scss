@@ -23,17 +23,21 @@ $black-grey: #333333;
 $sky-blue: #2D98DF;
 $life-red: #E92828;
 
+
 html, body {
   height: 100%;
 }
 // t e m p l a t e
+
 .jumbotron {
    margin: auto;
    background-color: $life-red;
    color: white;
      span {
        font-size: 16px;
+
        margin-right: 10px;
+
        a {
          color: $yellow-gold;
        }
@@ -46,6 +50,7 @@ html, body {
      }
      .text-center {
        margin-top: 20px;
+
        a {
          color: white;
        }
@@ -53,6 +58,7 @@ html, body {
          color: white;
          text-decoration: none;
        }
+
      }
        .life {
          font-family: 'Teko', sans-serif;
@@ -76,9 +82,11 @@ html, body {
        width: 100%;
        margin: auto;
        border-style: none;
+
        padding: 10px;
        font-family: 'Nunito Sans', sans-serif;
        color: $black-grey;
+
        background-color: $yellow-gold;
      }
      .pull-right {
@@ -88,7 +96,9 @@ html, body {
      }
 }
 .footer {
+
   bottom: 0;
+  
   left: 0;
   right: 0;
   width: 100%;
@@ -97,7 +107,9 @@ html, body {
   color: white;
   padding-top: 15px;
   margin-top: 50px;
+
   position: absolute
+
   ul {
     list-style-type: none;
     font-family: 'Nunito Sans', sans-serif;
@@ -111,7 +123,9 @@ html, body {
   }
 }
 
+
 // i n d e x  /  l a n d i n g  p a g e
+
 .user-false {
   h3 {
     font-family: 'Teko', sans-serif;
@@ -210,6 +224,7 @@ html, body {
   }
 }
 
+
 // n a v b a r
 .profile {
   display: inline-block;
@@ -224,25 +239,30 @@ html, body {
     color: $sky-blue;
   }
 }
+
 .profile-sidebar {
   padding: 15px 0 15px 0;
   background: $life-red;
   height: 100%;
 }
+
 .profile-userpic img {
   float: none;
   margin: 0 auto;
   width: 30%;
   height: 30%;
+
   -webkit-border-radius: 50% !important;
   -moz-border-radius: 50% !important;
   border-radius: 50% !important;
 }
+
 .profile-usermenu {
   background-color: $life-red;
   margin-top: 30px;
   text-align: center;
 }
+
 .profile-usermenu ul li a {
   color: white;
   background-color: $life-red;
@@ -251,31 +271,39 @@ html, body {
   font-weight: 200;
   text-align: center;
 }
+
 .profile-usermenu ul li a:hover {
   background-color: #fafcfd;
   color: $black-grey;
 }
 
+
 // p r o f i l e  t i p s
 .tipsdiv {
+
   display: inline-block;
   margin-top: auto;
   h1 {
     font-family: 'Teko', sans-serif;
     font-weight: 500;
     font-size: 50px;
+
     margin-left: 10px;
+
   }
 }
 .add_tip {
   a {
+
     text-align: center;
     color: $yellow-gold;
     display: inline-block;
+
     font-size: 16px;
     font-weight: 500;
     font-family: 'Quicksand', sans-serif;
     margin-bottom: 10px;
+
 
   }
     a:hover{
@@ -385,5 +413,47 @@ html, body {
   .glyphicon {
     margin-left: 5px;
     color: $yellow-gold;
+
   }
+    a:hover{
+      color: white;
+      text-decoration: none;
+    }
+}
+
+.tips {
+  display: inline-block;
+  background-color: lightgrey;
+  border: 3px;
+  border-radius: 15px;
+  height: 200px;
+  margin: 10px;
+  width: 100%;
+  font-family: 'Nunito Sans', sans-serif;
+    .usertip-title {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      text-transform: capitalize;
+      margin: 5px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+    .content {
+      background-color: white;
+      border: 3px;
+      border-radius: 10px;
+      font-size: 16px;
+      height: 100px;
+      margin: 5px;
+    }
+    .usertip-options, .tip-timestamp {
+      font-size: 14px;
+      margin-top: 10px;
+      margin-right: 5px;
+    }
+    .usertip-content {
+      margin: 10px;
+    }
+
 }
