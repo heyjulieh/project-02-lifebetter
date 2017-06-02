@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'new/genre'
 
+
   devise_for :users
 
   # resources :genres
@@ -11,6 +12,10 @@ Rails.application.routes.draw do
       put "dislike", to: "tips#downvote"
   end
 end
+
+
+ 
+
   root 'index#index'
 
   get '/genres/:genre', to: 'genres#show', as: 'genre'
