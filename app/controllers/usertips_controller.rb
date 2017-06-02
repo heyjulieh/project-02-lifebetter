@@ -1,4 +1,5 @@
 class UsertipsController < ApplicationController
+  before_action :authenticate_user!
 
   # get '/users/:user_id/tips/new', to: 'usertips#new', as: 'new_user_tip'
   def new

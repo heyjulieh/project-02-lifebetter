@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-  before_action :auth_user
-
-	#before_action :confirm_logged_in
+  # before_action :auth_user
 
   #get '/users/', to: 'users#index', as: 'users'
   def index
@@ -16,9 +14,8 @@ class UsersController < ApplicationController
 
   private
   #custom method. if user is not signed in, redirect to root
-  def auth_user
-    redirect_to root_path unless user_signed_in?
-  end
+
+
 
   def set_user
     @user = User.friendly.find(params[:user_id])
