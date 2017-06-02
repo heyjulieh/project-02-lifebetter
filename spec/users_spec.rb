@@ -11,11 +11,17 @@ describe UsersController, :type => :controller do
     test_host  # so controller#index wont redirect to http://test.host/
   end
 
+  it "renders the index template" do
+    get :index, :format => "html"
+    # 302 Found - This response code means that URI of requested resource has been changed temporarily. New changes in the URI might be made in the future. 
+    expect(response).to have_http_status(302)
+  end
     it "renders the index template" do
     get :index, :format => "html"
     # expect(response).to render_template(:index)
     expect(response).to redirect_to '/'
   end
+
 
 end
 
