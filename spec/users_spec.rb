@@ -11,22 +11,23 @@ describe UsersController, :type => :controller do
     test_host  # so controller#index wont redirect to http://test.host/
   end
 
+  it "renders the index template" do
+    get :index, :format => "html"
+    # 302 Found - This response code means that URI of requested resource has been changed temporarily. New changes in the URI might be made in the future.
+    # remarkably - rspec does not allow 'one of' or if else.  status 100 and 200 would be acceptable
+    expect(response).to have_http_status(302)
+  end
     it "renders the index template" do
     get :index, :format => "html"
     # expect(response).to render_template(:index)
     expect(response).to redirect_to '/'
   end
-
 end
 
 # describe “GET index” do
-#   # it “assigns @users” do
-#   #   user = FactoryGirl.create(:user)
-#   #   get :index
-#   #   expect(assigns(:users)).to eq([user])
-#   # end
-#   it “renders the index template” do
+#   it “assigns @users” do
+#     user = FactoryGirl.create(:user)
 #     get :index
-#     expect(response).to render_template(“index”)
+#     expect(assigns(:users)).to eq([user])
 #   end
 # end
