@@ -6,12 +6,11 @@ class UsersController < ApplicationController
   #get '/users/', to: 'users#index', as: 'users'
   def index
     @users = User.all
-
   end
 
   #get '/users/:user_id', to: 'users#show', as: 'user'
   def show
-    @user = User.find_by(username:params[:username])
+    set_user
     @tips = @user.tips
   end
 
@@ -20,4 +19,13 @@ class UsersController < ApplicationController
   def auth_user
     redirect_to root_path unless user_signed_in?
   end
+
+  def set_user
+    @user = User.friendly.find(params[:user_id])
+  end
+
+  def user_params
+    params.require(:user).permit(:username, :slug)
+  end
+
 end
