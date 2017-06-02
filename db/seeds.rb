@@ -10,9 +10,9 @@ User.delete_all
 Tip.delete_all
 
 user_data = [
-  {email: "b@c.com", password: '123456', first_name: "Beth", last_name: "Coppola", username: "BethC", age: 30, location: "San Francisco"},
-  {email: "c@d.com", password: '123456', first_name: "Cory", last_name: "Donald", username: "CDude", age: 25, location: "San Francisco"},
-  {email: "d@e.com", password: '123456', first_name: "Dan", last_name: "Emery", username: "deeman", age: 40, location: "San Francisco"}
+  {email: "b@c.com", password: '123456', first_name: "Beth", last_name: "Coppola", username: "BethC", birthday: "1987-02-02", location: "San Francisco"},
+  {email: "c@d.com", password: '123456', first_name: "Cory", last_name: "Donald", username: "CDude", birthday: "1992-03-03", location: "San Francisco"},
+  {email: "d@e.com", password: '123456', first_name: "Dan", last_name: "Emery", username: "deeman", birthday: "1977-04-04", location: "San Francisco"}
 ]
 
 tip_data = [
@@ -26,7 +26,7 @@ tip_data = [
 
 User.create(user_data)
 
-mock_user = User.create({email: "a@b.com", password: '123456', first_name: "Abby", last_name: "Boyd", username: "ABoyd", age: 20, location: "San Francisco"})
+mock_user = User.create({email: "a@b.com", password: '123456', first_name: "Abby", last_name: "Boyd", username: "ABoyd", birthday: "1997-01-02", location: "San Francisco"})
 mock_user.tips << Tip.create(tip_data)
 
 p "Seed data populated!"
