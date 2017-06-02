@@ -8,14 +8,9 @@
     <%= f.text_field :first_name, autofocus: true %>
   </div>
 
-<div class="field">
+  <div class="field">
     <%= f.label :last_name %><br />
     <%= f.text_field :last_name, autofocus: true %>
-  </div>
-
-<div class="field">
-    <%= f.label :age %><br />
-    <%= f.range_field :age, autofocus: true %>
   </div>
 
   <div class="field">
@@ -24,7 +19,15 @@
     <em>(<%= @minimum_username_length %> characters minimum)</em>
     <% end %><br />
     <%= f.text_field :username, autocomplete: "off" %>
-    
+  </div>
+
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.text_field :age %>
+  </div>
+
+  <div class="">
+    <%= f.file_field :avatar %>
   </div>
 
   <div class="field">
@@ -37,7 +40,7 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>

@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
+gem 'friendly_id', '~> 5.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
@@ -43,7 +46,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.3'
 gem "haml"
 gem 'friendly_id', '~> 5.1.0'
-gem 'devise', '~> 4.3'
 
 
 group :development, :test do
@@ -52,6 +54,11 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  # rspec needs gem
+  gem 'rspec', "~> 3.6.0"    # added this because 'LoadError: cannot load such file -- rspec'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'  # to fix 'NoMethodError:' for testing controllers
+
 end
 
 group :development do
