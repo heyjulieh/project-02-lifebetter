@@ -57,6 +57,7 @@ group :development, :test do
   gem 'rspec', "~> 3.6.0"    # added this because 'LoadError: cannot load such file -- rspec'
   gem 'rspec-rails', '~> 3.5'
   gem 'rails-controller-testing'  # to fix 'NoMethodError:' for testing controllers
+  gem 'factory_girl_rails'
 
 end
 

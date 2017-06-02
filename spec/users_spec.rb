@@ -6,23 +6,15 @@ puts "------running Rspec in #{Rails.env} environment-------"
 
 # do not start next line with 'RSpec.' !!! otherwise, looks for two paramaters
 describe UsersController, :type => :controller do
+  render_views
   before do
     test_host  # so controller#index wont redirect to http://test.host/
   end
-  # it "should get index" do
-  #   get :index #, params: hash_params
-  #   # assert_response :success
-  #   expect(response).to render_template("Found")
-  # end
 
-  # describe  "renders the index template" do
-  #   subject { get :index }
-  #
-  #   specify { should render_template(:index) }
-  # end
     it "renders the index template" do
-    get :index
-    expect(response).to render_template("index")
+    get :index, :format => "html"
+    # expect(response).to render_template(:index)
+    expect(response).to redirect_to '/'
   end
 
 end
