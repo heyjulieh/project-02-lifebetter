@@ -6,20 +6,18 @@
         -# User Title
         .profile-usertitle
           .profile-usertitle-name
-            %a{:href => user_path}
-              = @user.first_name
-              = @user.last_name
+            %a{:href => "#"}
+              = current_user.first_name
+              = current_user.last_name
 
           -# User Pic
           .profile-userpic
-            %a{:href => user_path}
-              = image_tag @user.avatar.url, class: "img-responsive" #size: "150x100" or (:medium)
+            %a{:href => "#"}
+              = image_tag current_user.avatar.url, class: "img-responsive" #size: "150x100" or (:medium)
               -# %img.img-responsive{:alt => "", :src => "https://files.slack.com/files-tmb/T0351JZQ0-F5HHG3EN4-7f9ab0f32e/seijin_480.png"}
 
           -# Menu
           .profile-usermenu
-            %ul.nav.add_tip
-              = link_to "Add New Tip", new_user_tip_path
             %ul.nav
               %li
                 %a{:href => "/genres/beauty"}
@@ -36,24 +34,36 @@
               %li
                 %a{:href => "/genres/travel"}
                   Travel
+    - if request.original_fullpath == '/genres/beauty'
+      %h1.beauty BEAUTY
+    - if request.original_fullpath == '/genres/health'
+      %h1.health HEALTH
+    - if request.original_fullpath == '/genres/food'
+      %h1.food FOOD
+    - if request.original_fullpath == '/genres/home'
+      %h1.home HOME
+    - if request.original_fullpath == '/genres/travel'
+      %h1.travel TRAVEL
     .col-sm-9.col-md-9.col-lg-9.tipsdiv
-      %h1 TIPS by YOU!
       - @tips.each do |tip|
-        .container-fluid.tips
+        .container-fluid.alltips
           .row
             .col-sm-12.col-md-12.col-lg-12
               .usertip-title
                 %h3
                   = tip.title
+                %p
+                  by
+                  = current_user.username
                 .container-fluid.content
                   = tip.content
                   .pull-right
                     = image_tag tip.avatar.url, height:"190px"
                 .pull-left
                   = tip.genre
-                  = link_to delete_user_tip_path(@user.id, tip.id), data: { confirm: "Are you sure you want to delete this tip?" }, method: :delete do
+                  = link_to delete_user_tip_path(current_user.id, tip.id), data: { confirm: "Are you sure you want to delete this tip?" }, method: :delete do
                     %span.glyphicon.glyphicon-remove
-                  = link_to edit_user_tip_path(@user.id, tip.id) do
+                  = link_to edit_user_tip_path(current_user.id, tip.id) do
                     %span.glyphicon.glyphicon-pencil
                 .pull-right
                   = tip.created_at.strftime("%a, %b %d, %Y @ %l:%M %p")

@@ -78,6 +78,7 @@ $life-red: #E92828;
        margin-top: -25px;
        margin-right: 10px;
      }
+
 }
 .footer {
   clear: both;
@@ -208,6 +209,12 @@ $life-red: #E92828;
   margin: auto;
   height: 100%;
   width: 100%;
+  h1 {
+    display: inline-block;
+    font-family: 'Teko', sans-serif;
+    font-size: 60px;
+    margin-left: 22px;
+  }
 }
 
 /* profile sidebar */
@@ -268,7 +275,7 @@ $life-red: #E92828;
 }
 
 // profile tips
-.tipsbyyou {
+.tipsdiv {
   display: inline-block;
   margin-top: auto;
   h1 {
@@ -338,5 +345,63 @@ $life-red: #E92828;
     }
     .glyphicon {
       margin-left: 5px;
+      color: $sky-blue;
     }
+}
+
+// specific genre page
+.alltips {
+  display: inline-block;
+  background-color: $black-grey;
+  border: 3px;
+  border-radius: 10px;
+  height: 350px;
+  margin: 10px;
+  width: 100%;
+  font-family: 'Nunito Sans', sans-serif;
+  h3, p {
+    color: white;
+    margin-bottom: 15px;
+    margin-left: 10px;
+  }
+  p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    text-transform: lowercase;
+  }
+  .usertip-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding-bottom: 10px;
+    color: $light-grey;
+  }
+  .content {
+    background-color: white;
+    color: $black-grey;
+    font-size: 16px;
+    height: 200px;
+    margin: 5px;
+    padding-right: 0;
+  }
+  .pull-left {
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  .pull-right {
+    font-size: 14px;
+    margin-top: 5px;
+    margin-right: 5px;
+    @media only screen and (max-width: 1026px) {
+        img {
+          display: none;
+        }
+    }
+  }
+  .glyphicon {
+    margin-left: 5px;
+    color: $yellow-gold;
+  }
 }
