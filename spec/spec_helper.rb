@@ -17,6 +17,15 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+
+  # https://www.reddit.com/r/rails/comments/4uv3ed/how_to_get_rspec_to_respect_test_env_default_url/
+  # to prevent error in UsersController
+  # expecting <"index"> but was a redirect to <http://test.host/>
+  def test_host
+    @request.host = 'localhost:3000'
+  end
+
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
