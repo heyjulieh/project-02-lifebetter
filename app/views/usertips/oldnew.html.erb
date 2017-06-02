@@ -1,0 +1,8 @@
+<%= form_for @tip, url: create_user_tip_path, method: "create" do |f| %>
+<%= f.text_field :title, placeholder: "Title" %>
+<%= f.text_area :content, placeholder: "Enter your tip here!" %>
+<%= f.select :genre, ['beauty', 'health', 'fitness', 'life', 'travel'] %>
+<%= f.label :avatar %> <br>
+<%= f.file_field :avatar %>
+<%= f.submit "save new tip!" %>
+<% end %>
