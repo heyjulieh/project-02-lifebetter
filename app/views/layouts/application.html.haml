@@ -18,8 +18,9 @@
             = button_to "Sign Up", new_user_registration_path, :method => :get
         .text-center
           %ul
-            %li.life LIFE
-            %li.better better
+            %a{:href => '/'}
+              %li.life LIFE
+              %li.better better
         / devise alerts (login -> invalid)
         %span.notice
           = notice
