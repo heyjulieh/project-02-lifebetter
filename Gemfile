@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+
+gem 'acts_as_votable', '~> 0.10.0'
+
+
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 gem 'friendly_id', '~> 5.1.0'
@@ -45,7 +49,7 @@ gem 'jbuilder', '~> 2.5'
 # gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 gem 'devise', '~> 4.3'
 gem "haml"
-gem 'friendly_id', '~> 5.1.0'
+
 
 gem 'birthday', '~> 0.3.0'
 
@@ -59,6 +63,7 @@ group :development, :test do
   gem 'rspec', "~> 3.6.0"    # added this because 'LoadError: cannot load such file -- rspec'
   gem 'rspec-rails', '~> 3.5'
   gem 'rails-controller-testing'  # to fix 'NoMethodError:' for testing controllers
+
   gem 'factory_girl_rails'
 
 end
