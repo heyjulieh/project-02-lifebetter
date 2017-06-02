@@ -25,10 +25,15 @@ $life-red: #E92828;
 
 // template
 .jumbotron {
-   margin-top: 0px;
-   width: 100%;
+   margin: auto;
    background-color: $life-red;
    color: white;
+     span {
+       font-size: 16px;
+       a {
+         color: $yellow-gold;
+       }
+     }
      ul {
        list-style-type: none;
      }
@@ -36,7 +41,7 @@ $life-red: #E92828;
        display: inline-block;
      }
      .text-center {
-       margin-top: 10px;
+       margin-top: 20px;
      }
        .life {
          font-family: 'Teko', sans-serif;
@@ -50,8 +55,11 @@ $life-red: #E92828;
          font-size: 80px;
        }
      .button_to {
-       margin-top: -50px;
+       margin: -50px 0px 0px 0px;
        display: inline-block;
+       border-style: none;
+       padding: 10px 3px 10px 3px;
+       font-family: 'Nunito Sans', sans-serif;
      }
      input {
        width: 100%;
@@ -62,12 +70,6 @@ $life-red: #E92828;
        color: white;
        background-color: $yellow-gold;
      }
-     .button_to {
-       border-style: none;
-       padding: 10px 15px 10px 15px;
-       font-family: 'Nunito Sans', sans-serif;
-       color: black;
-     }
      .pull-right {
        display: inline-block;
        margin-top: -25px;
@@ -75,6 +77,7 @@ $life-red: #E92828;
      }
 }
 .footer {
+  clear: both;
   bottom: 0px;
   height: 130px;
   left: 0;
@@ -198,9 +201,9 @@ $life-red: #E92828;
 // navbar
 /* Profile container */
 .profile {
-  margin-top: -60px;
   display: inline-block;
   height: 100%;
+  width: 100%;
 }
 
 /* Profile sidebar */
@@ -262,12 +265,12 @@ $life-red: #E92828;
 
 .tipsbyyou {
   display: inline-block;
-  margin-top: 50px;
-    h1 {
-      font-family: 'Teko', sans-serif;
-      font-weight: 500;
-      font-size: 50px;
-    }
+  margin-top: auto;
+  h1 {
+    font-family: 'Teko', sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+  }
 }
 .add_tip {
   a {
@@ -288,29 +291,36 @@ $life-red: #E92828;
 .tips {
   display: inline-block;
   background-color: lightgrey;
+  border: 3px;
+  border-radius: 15px;
   height: 200px;
   margin: 10px;
   width: 100%;
   font-family: 'Nunito Sans', sans-serif;
-  border: 2px;
-  border-radius: 0.5;
     .usertip-title {
       font-family: 'Quicksand', sans-serif;
       font-size: 20px;
       font-weight: 500;
-      text-transform: uppercase;
+      text-transform: capitalize;
       margin: 5px;
+      padding-bottom: 10px;
+      padding-top: 10px;
     }
     .content {
       background-color: white;
+      border: 3px;
+      border-radius: 10px;
       font-size: 16px;
       height: 100px;
       margin: 5px;
-      .usertip-content {
-        margin: 10px;
-      }
     }
-    .tip-timestamp {
-      margin-right: 10px;
+    .usertip-options, .tip-timestamp {
+      font-size: 14px;
+      margin-top: 10px;
+      margin-right: 5px;
     }
+    .usertip-content {
+      margin: 10px;
+    }
+
 }

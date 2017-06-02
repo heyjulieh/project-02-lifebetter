@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   #get '/users/:user_id', to: 'users#show', as: 'user'
   def show
-    @user = User.find (params[:user_id])
+    @user = User.find_by(username:params[:username])
     @tips = @user.tips
   end
 
