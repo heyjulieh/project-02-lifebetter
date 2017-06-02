@@ -4,7 +4,13 @@ Rails.application.routes.draw do
   devise_for :users
 
   # resources :genres
-  resources :tips
+  resources :tips do
+
+    member do
+     put "like", to: "tips#upvote"
+      put "dislike", to: "tips#downvote"
+  end
+end
   root 'index#index'
 
   get '/genres/:genre', to: 'genres#show', as: 'genre'
