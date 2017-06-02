@@ -1,0 +1,37 @@
+    <div class="col-sm-9 col-md-9 col-lg-9 tipsdiv">
+      if
+      <h1>TIPS by YOU!</h1>
+      <% @tips.each do |tip| %>
+        <div class="container-fluid tips">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="usertip-title">
+                <h3>
+                  <%= tip.title %>
+                </h3>
+                <div class="container-fluid content">
+                  <%= tip.content %>
+                  <div class="pull-right">
+                    <%= image_tag tip.avatar.url, height:"190px" %>
+                  </div>
+                </div>
+                <div class="pull-left">
+                  <%= tip.genre %>
+                  <%= link_to delete_user_tip_path(@user.id, tip.id), data: { confirm: "Are you sure you want to delete this tip?" }, method: :delete do %>
+                    <span class="glyphicon glyphicon-remove"></span>
+                  <% end %>
+                  <%= link_to edit_user_tip_path(@user.id, tip.id) do %>
+                    <span class="glyphicon glyphicon-pencil"></span>
+                  <% end %>
+                </div>
+                <div class="pull-right">
+                  <%= tip.created_at.strftime("%a, %b %d, %Y @ %l:%M %p") %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

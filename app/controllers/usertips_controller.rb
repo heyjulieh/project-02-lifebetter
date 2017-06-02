@@ -1,5 +1,6 @@
 class UsertipsController < ApplicationController
   before_action :authenticate_user!
+  # before_action :require_ownership
 
   # get '/users/:user_id/tips/new', to: 'usertips#new', as: 'new_user_tip'
   def new
@@ -40,9 +41,14 @@ class UsertipsController < ApplicationController
   def destroy
     set_tip
     set_user
-    @tip.destroy
-    redirect_to @user
-    flash[:notice] = "Deleted!"
+    if @user == current_user
+      @tip.destroy
+      redirect_to @user
+      flash[:notice] = "Deleted!"
+    else
+      redirect_to @user
+      flash[:notice] = "Sorry, you can only delete your own comments!"
+    end
   end
 
   private
@@ -63,7 +69,11 @@ class UsertipsController < ApplicationController
     params.require(:user).permit(:username, :slug)
   end
 
-  # below routes are defined, but i don't know if we need them (-jane)
-  # get '/users/:user_id/tips', to: 'usertips#index', as: 'user_tips'
+  def require_ownership
+    if current_user.nil? || current_user.username != params[:user_id]
+      flash[:notice] = "you don't have access to this page"
+      redirect_to user_path(current_user)
+    end
+  end
 
 end
