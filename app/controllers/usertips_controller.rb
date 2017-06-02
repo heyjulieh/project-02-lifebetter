@@ -6,11 +6,6 @@ class UsertipsController < ApplicationController
     @tip = Tip.new
   end
 
-  # get '/users/:user_id/tips/:id', to: 'usertips#show', as: 'user_tip'
-  def show
-    set_tip
-  end
-
   # post '/users/:user_id/tips', to: 'usertips#create'
   def create
     set_user
@@ -21,7 +16,6 @@ class UsertipsController < ApplicationController
       flash[:notice] = "Tip successfully saved!"
     else
       flash[:error] = @tip.errors.full.messages.join(" ")
-       # add flash <% %> into template!
       render :new
     end
   end
