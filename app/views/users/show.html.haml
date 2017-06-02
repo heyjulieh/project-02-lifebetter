@@ -3,39 +3,32 @@
   .row.profile
     .col-sm-3.col-md-3.col-lg-3
       .profile-sidebar
-        -# User Title
-        .profile-usertitle
-          .profile-usertitle-name
-            %a{:href => user_path}
-              = @user.first_name
-              = @user.last_name
+        -# User Pic
+        .profile-userpic
+          %a{:href => user_path}
+            = image_tag @user.avatar.url, class: "img-responsive" #size: "150x100" or (:medium)
+            -# %img.img-responsive{:alt => "", :src => "https://files.slack.com/files-tmb/T0351JZQ0-F5HHG3EN4-7f9ab0f32e/seijin_480.png"}
 
-          -# User Pic
-          .profile-userpic
-            %a{:href => user_path}
-              = image_tag @user.avatar.url, class: "img-responsive" #size: "150x100" or (:medium)
-              -# %img.img-responsive{:alt => "", :src => "https://files.slack.com/files-tmb/T0351JZQ0-F5HHG3EN4-7f9ab0f32e/seijin_480.png"}
-
-          -# Menu
-          .profile-usermenu
-            %ul.nav.add_tip
-              = link_to "Add New Tip", new_user_tip_path
-            %ul.nav
-              %li
-                %a{:href => "/genres/beauty"}
-                  Beauty
-              %li
-                %a{:href => "/genres/health"}
-                  Fitness/Health
-              %li
-                %a{:href => "/genres/food"}
-                  Food
-              %li
-                %a{:href => "/genres/home"}
-                  Home/Living
-              %li
-                %a{:href => "/genres/travel"}
-                  Travel
+        -# Menu
+        .profile-usermenu
+          %ul.nav.add_tip
+            = link_to "Add New Tip", new_user_tip_path
+          %ul.nav
+            %li
+              %a{:href => "/genres/beauty"}
+                Beauty
+            %li
+              %a{:href => "/genres/health"}
+                Fitness/Health
+            %li
+              %a{:href => "/genres/food"}
+                Food
+            %li
+              %a{:href => "/genres/home"}
+                Home/Living
+            %li
+              %a{:href => "/genres/travel"}
+                Travel
     .col-sm-9.col-md-9.col-lg-9.tipsdiv
       %h1 TIPS by YOU!
       - @tips.each do |tip|

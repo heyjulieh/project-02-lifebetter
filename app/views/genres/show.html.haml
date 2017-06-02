@@ -3,37 +3,30 @@
   .row.profile
     .col-sm-3.col-md-3.col-lg-3
       .profile-sidebar
-        -# User Title
-        .profile-usertitle
-          .profile-usertitle-name
-            %a{:href => "#"}
-              = current_user.first_name
-              = current_user.last_name
+        -# User Pic
+        .profile-userpic
+          %a{:href => "#"}
+            = image_tag current_user.avatar.url, class: "img-responsive" #size: "150x100" or (:medium)
+            -# %img.img-responsive{:alt => "", :src => "https://files.slack.com/files-tmb/T0351JZQ0-F5HHG3EN4-7f9ab0f32e/seijin_480.png"}
 
-          -# User Pic
-          .profile-userpic
-            %a{:href => "#"}
-              = image_tag current_user.avatar.url, class: "img-responsive" #size: "150x100" or (:medium)
-              -# %img.img-responsive{:alt => "", :src => "https://files.slack.com/files-tmb/T0351JZQ0-F5HHG3EN4-7f9ab0f32e/seijin_480.png"}
-
-          -# Menu
-          .profile-usermenu
-            %ul.nav
-              %li
-                %a{:href => "/genres/beauty"}
-                  Beauty
-              %li
-                %a{:href => "/genres/health"}
-                  Fitness/Health
-              %li
-                %a{:href => "/genres/food"}
-                  Food
-              %li
-                %a{:href => "/genres/home"}
-                  Home/Living
-              %li
-                %a{:href => "/genres/travel"}
-                  Travel
+        -# Menu
+        .profile-usermenu
+          %ul.nav
+            %li
+              %a{:href => "/genres/beauty"}
+                Beauty
+            %li
+              %a{:href => "/genres/health"}
+                Fitness/Health
+            %li
+              %a{:href => "/genres/food"}
+                Food
+            %li
+              %a{:href => "/genres/home"}
+                Home/Living
+            %li
+              %a{:href => "/genres/travel"}
+                Travel
     - if request.original_fullpath == '/genres/beauty'
       %h1.beauty BEAUTY
     - if request.original_fullpath == '/genres/health'
