@@ -4,6 +4,9 @@ require 'spec_helper'
 puts "------running Rspec in #{Rails.env} environment-------"
 # require '../app/controllers/users_controller'
 
+RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
+end
 # do not start next line with 'RSpec.' !!! otherwise, looks for two paramaters
 describe UsersController, :type => :controller do
 
