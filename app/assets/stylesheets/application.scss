@@ -389,3 +389,39 @@ html, body {
     color: $yellow-gold;
   }
 }
+
+// form
+
+.form {
+  #user_avatar {
+    text-align:center;
+    display:inline-block;
+    margin: auto;
+    padding-left: 90px;
+
+  }
+
+}
+
+.form-group {
+  text-align: center;
+  display: block;
+  margin: auto 0;
+  width: 100%;
+  background-color: $yellow-gold;
+  h2 {
+    font-family:'Nunito Sans', sans-serif;
+  }
+}
+
+.field {
+
+  background-color: $yellow-gold;
+  margin-bottom: 15px;
+  display: block;
+  width: 100%;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+
+

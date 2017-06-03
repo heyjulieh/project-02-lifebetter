@@ -246,8 +246,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  birthday (~> 0.3.0)
   acts_as_votable (~> 0.10.0)
+  birthday (~> 0.3.0)
   bootstrap-sass (~> 3.3.6)
   byebug
   capybara (~> 2.13)
