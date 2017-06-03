@@ -3,7 +3,7 @@ require 'rails_helper'
 # route to GET TO login: /users/sign_in
 RSpec.feature "Logins", type: :feature do
   user = User.create(username: "testman", password: "123456")  # password min is 6 characters
-  @tip.content = "test tip"
+  tip_test = Tip.create(genre: "test_genre", title: "test_title", important: true, user_id: 1)
 
   it "user can log in", :type => :feature do
     puts "start of log in test"
