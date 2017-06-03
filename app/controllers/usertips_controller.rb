@@ -1,6 +1,6 @@
 class UsertipsController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_ownership
+  # before_action :require_ownership
 
   # get '/users/:user_id/tips/new', to: 'usertips#new', as: 'new_user_tip'
   def new
