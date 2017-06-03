@@ -399,11 +399,10 @@ html, body {
     height:15px;
     padding: 20px;
     margin-bottom: 20px;
-    width: 80%;
+    width: 90%;
   }
   .actions {
     height: 100px;
-    display: inline-block;
     border-style: none;
   }
   .content {
@@ -422,5 +421,10 @@ html, body {
     text-transform: capitalize;
     text-align: center
   }
-
+  label {
+    margin: 0
+  }
+  .cancel {
+    margin-top: 50px;
+  }
 }
