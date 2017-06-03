@@ -389,3 +389,38 @@ html, body {
     color: $yellow-gold;
   }
 }
+
+// e d i t  p r o f i l e  p a g e
+.editprofile {
+  font-family: 'Nunito Sans', sans-serif;
+  input {
+    background-color: $yellow-gold;
+    border-width: 0;
+    height:15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+  }
+  .actions {
+    height: 100px;
+    display: inline-block;
+    border-style: none;
+  }
+  .content {
+    margin-top: 30px;
+  }
+  #user_avatar {
+    background-color: white;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  img {
+    margin-top: 30px;
+  }
+  h2 {
+    color: $sky-blue;
+    font-weight: 800;
+    text-transform: capitalize;
+    text-align: center
+  }
+
+}
