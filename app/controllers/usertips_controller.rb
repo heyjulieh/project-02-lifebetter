@@ -25,7 +25,6 @@ class UsertipsController < ApplicationController
   # get '/users/:user_id/tips/:id/edit', to: 'usertips#edit', as: 'edit_user_tip'
   def edit
     set_tip
-    # @tip = Tip.find params[:id]
   end
 
   # patch '/users/:user_id/tips/:id', to: 'usertips#update'
@@ -72,7 +71,7 @@ class UsertipsController < ApplicationController
   # prevents users from creating, editing, deleting a tip that wasn't created by them
   def require_ownership
     if current_user.nil? || current_user.username != params[:user_id]
-      flash[:notice] = "Sorry, you don't have access to this page"
+      flash[:notice] = "Sorry, you don't have access to this function"
       redirect_to user_path(current_user)
     end
   end
