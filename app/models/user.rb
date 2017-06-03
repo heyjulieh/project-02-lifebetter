@@ -24,4 +24,6 @@ class User < ApplicationRecord
   def email_changed?
    false
   end
+
+  acts_as_birthday :birthday
 end
