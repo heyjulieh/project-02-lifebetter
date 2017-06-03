@@ -1,6 +1,6 @@
 class UsertipsController < ApplicationController
   before_action :authenticate_user!
-  # before_action :require_ownership
+  before_action :require_ownership
 
   # get '/users/:user_id/tips/new', to: 'usertips#new', as: 'new_user_tip'
   def new
@@ -69,9 +69,10 @@ class UsertipsController < ApplicationController
     params.require(:user).permit(:username, :slug)
   end
 
+  # prevents users from creating, editing, deleting a tip that wasn't created by them
   def require_ownership
     if current_user.nil? || current_user.username != params[:user_id]
-      flash[:notice] = "you don't have access to this page"
+      flash[:notice] = "Sorry, you don't have access to this page"
       redirect_to user_path(current_user)
     end
   end

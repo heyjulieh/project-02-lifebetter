@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   #get '/users/', to: 'users#index', as: 'users'
   def index
     @users = User.all
