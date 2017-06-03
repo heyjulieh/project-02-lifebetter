@@ -48,7 +48,7 @@
                   = tip.title
                 %p
                   by
-                  = link_to tip.user.username, user_path(current_user)
+                  = link_to tip.user.username, user_path(tip.user)
                 .container-fluid.content
                   = tip.content
                   .pull-right
