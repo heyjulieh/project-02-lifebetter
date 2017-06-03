@@ -10,6 +10,8 @@
             -# %img.img-responsive{:alt => "", :src => "https://files.slack.com/files-tmb/T0351JZQ0-F5HHG3EN4-7f9ab0f32e/seijin_480.png"}
 
         .profile-usermenu
+          %ul.nav.add_tip
+            = link_to "Add New Tip", new_user_tip_path(current_user)
           %ul.nav
             %li
               %a{:href => "/genres/beauty"}
