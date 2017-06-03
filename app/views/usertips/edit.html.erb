@@ -1,5 +1,11 @@
 <%= form_for @tip, url: update_user_tip_path, method: "patch" do |f| %>
-<%= f.text_field :title, placeholder: "Title" %>
-<%= f.text_area :content, placeholder: "Enter your tip here!" %>
-<%= f.submit "save new tip!" %>
+  <div>
+    <%= f.text_field :title, placeholder: "Title" %>
+    <%= f.text_area :content, placeholder: "Enter your tip here!" %>
+  </div>
+  <div>
+    <%= f.label "Submit a new picture for your tip" %>
+    <%= f.file_field :avatar%>
+    <%= f.submit "Post Updated Tip!" %>
+  </div>
 <% end %>
