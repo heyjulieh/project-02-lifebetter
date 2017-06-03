@@ -7,16 +7,22 @@
       -# image here
       -# pull in important and most thumbs up tip here
       -# for now, this is placeholder stuff
-      %h5 Use coconut oil in your hair once a week to get super soft hair that lasts a month!
-      %h5.pull-right -User1234
+      %h5
+        = @tip.content
+      %h5.pull-right
+        by
+        = @tip.user.username
 
 - else
   .container-fluid.user-true
     .row.justify-content-center
       .col-sm-12.align-self-center
         .bigtip
-          %h5 Use coconut oil in your hair once a week to get super soft hair that lasts a month!
-          %h5 -User1234
+          %h5
+            = @tip.content
+          %h5.pull-right
+            by
+            = @tip.user.username
       .col-sm-4.align-self-center
         = link_to image_tag( 'art1.jpg'), '/genres/art'
         .text art
@@ -37,3 +43,4 @@
         = link_to image_tag( 'travel2.jpg'), '/genres/travel'
 
         .text travel
+= console
