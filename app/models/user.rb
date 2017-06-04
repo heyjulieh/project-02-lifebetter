@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   # username is not case sensitive
   validates :username, :presence=>true, :uniqueness=>{:case_sensitive=>false}
-
+  validates :email, :uniqueness=>true
 
   devise :database_authenticatable, :registerable,
 

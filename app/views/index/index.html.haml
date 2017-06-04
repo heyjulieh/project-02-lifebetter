@@ -1,14 +1,17 @@
-- if current_user.nil?
-  .container.user-false
-    %h4 Find out more life tips by signing up or logging in!
-    %br
-    %h3 LIFE TIP OF THE DAY
-    .large-tip
-      -# image here
-      -# pull in important and most thumbs up tip here
-      -# for now, this is placeholder stuff
-      %h5 Use coconut oil in your hair once a week to get super soft hair that lasts a month!
-      %h5.pull-right -User1234
+= render ('/layouts/largenav')
+.container-fluid.user-true
+  .row.justify-content-center
+    .col-sm-12.align-self-center
+      .bigtip
+        %h5
+          = @tip.content
+        %h5.pull-right
+          by
+          = @tip.user.username
+    .col-sm-4.align-self-center
+      = link_to image_tag( 'art1.jpg'), '/genres/art'
+      .text art
+    .col-sm-4.align-self-center
 
 - else
   .container-fluid.user-true
@@ -22,19 +25,36 @@
         = link_to image_tag( 'art1.jpg'), '/genres/art'
         .text art
       .col-sm-4.align-self-center
+      = link_to image_tag( 'beauty1.jpg'), '/genres/beauty'
+      .text beauty
+    .col-sm-4.align-self-center
+      = link_to image_tag( 'exercise1.jpg'), '/genres/health'
+      .text health
+    .col-sm-4.align-self-center
+      = link_to image_tag( 'food3.jpg'), '/genres/food'
+      .text food
+    .col-sm-4.align-self-center
+      = link_to image_tag( 'home4.jpg'), '/genres/home'
+      .text home
+    .col-sm-4.align-self-center
+      = link_to image_tag( 'travel2.jpg'), '/genres/travel'
+      .text travel
 
-        = link_to image_tag( 'beauty1.jpg'), '/genres/beauty'
-        .text beauty
-      .col-sm-4.align-self-center
-        = link_to image_tag( 'exercise1.jpg'), '/genres/health'
-        .text health
-      .col-sm-4.align-self-center
-        = link_to image_tag( 'food3.jpg'), '/genres/food'
-        .text food
-      .col-sm-4.align-self-center
-        = link_to image_tag( 'home4.jpg'), '/genres/home'
-        .text home
-      .col-sm-4.align-self-center
-        = link_to image_tag( 'travel2.jpg'), '/genres/travel'
 
-        .text travel
+-# - if current_user.nil?
+-#   .container.user-false
+-#     %h4 Find out more life tips by signing up or logging in!
+-#     %br
+-#     %h3 LIFE TIP OF THE DAY
+-#     .large-tip
+-#       -# image here
+-#       -# pull in important and most thumbs up tip here
+-#       -# for now, this is placeholder stuff
+-#       %h5
+-#         = @tip.content
+-#       %h5.pull-right
+-#         by
+-#         = @tip.user.username
+-#
+-# - else
+-#
