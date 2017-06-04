@@ -22,6 +22,7 @@ $dark-grey: #4F4F4F;
 $black-grey: #333333;
 $sky-blue: #2D98DF;
 $life-red: #E92828;
+$dark-red: #d00a0a;
 
 html, body {
   height: 100%;
@@ -485,6 +486,88 @@ html, body {
     .member {
       height: 280px;
       margin: auto
+    }
+  }
+}
+
+
+// s m a l l  n a v  b a r
+.jumbotron-small {
+  margin: auto;
+  background-color: $life-red;
+  color: white;
+  height: 60px;
+  span {
+    font-size: 16px;
+    margin-right: 10px;
+    a {
+      color: $yellow-gold;
+    }
+  }
+  ul {
+    list-style-type: none;
+  }
+  li {
+    display: inline-block;
+  }
+  .logo-left {
+    float: left;
+    margin-top: 5px;
+  }
+  a {
+    color: white;
+  }
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+  .dropbtn {
+    padding: 16px;
+    font-size: 16px;
+    height: 60px;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    a {
+      background-color: $dark-red;
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block
+    }
+    a:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+  }
+  .dropdown:hover .dropdown-content {
+    display: block
+  }
+  .dropdown:hover .dropbtn {
+    background-color: $dark-red;
+  }
+  .button_to {
+    margin: 0px 10px 0px 0px;
+    display: inline-block;
+    border-style: none;
+    padding: 10px 3px 10px 3px;
+    font-family: 'Nunito Sans', sans-serif;
+    input {
+      width: 100%;
+      margin: auto;
+      border-style: none;
+      padding: 10px;
+      font-family: 'Nunito Sans', sans-serif;
+      color: $black-grey;
+      background-color: $yellow-gold;
     }
   }
 }
