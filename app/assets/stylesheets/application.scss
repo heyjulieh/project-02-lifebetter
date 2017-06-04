@@ -31,7 +31,10 @@ html, body {
    margin: auto;
    background-color: $life-red;
    color: white;
-   height: 220px;
+   height: 250px;
+   width: 100%;
+   position: relative;
+   clear: both;
      span {
        font-size: 16px;
        margin-right: 10px;
@@ -79,8 +82,10 @@ html, body {
        border-style: none;
        padding: 10px;
        font-family: 'Nunito Sans', sans-serif;
+       font-size: 12px;
        color: $black-grey;
        background-color: $yellow-gold;
+       text-transform: uppercase;
      }
      .pull-right {
        display: inline-block;
@@ -98,7 +103,6 @@ html, body {
   color: white;
   padding-top: 15px;
   margin-top: 50px;
-  position: absolute
   ul {
     list-style-type: none;
     font-family: 'Nunito Sans', sans-serif;
@@ -152,6 +156,16 @@ html, body {
     margin-bottom: 15px;
     float: none;
   }
+  h3 {
+    display: inline-block;
+    font-family: 'Teko', sans-serif;
+    text-align: left;
+    width: 70%;
+    font-size: 40px;
+    color: $sky-blue;
+    margin-bottom: 0px;
+    margin-left: 10px;
+  }
   h4 {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 200;
@@ -165,8 +179,12 @@ html, body {
     color: $black-grey;
     width: 70%;
     height: 110px;
-    margin: auto;
-    padding: 15px;
+    margin-bottom: 20px;
+    padding: 20px;
+      h5 {
+        font-size: 20px;
+        font-weight: 400;
+      }
   }
   img {
     text-align: center;
@@ -230,6 +248,15 @@ html, body {
   padding: 15px 0 15px 0;
   background: $life-red;
   height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 150;
+    .profile-sidebar-scrolled {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+    }
 }
 .profile-userpic img {
   float: none;
@@ -387,5 +414,13 @@ html, body {
   .glyphicon {
     margin-left: 5px;
     color: $yellow-gold;
+  }
+  a {
+    display: inline-block;
+    color: $yellow-gold;
+    margin-right: 10px;
+    a:hover {
+      color: white;
+    }
   }
 }
