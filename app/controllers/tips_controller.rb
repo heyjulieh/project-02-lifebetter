@@ -13,6 +13,10 @@ class TipsController < ApplicationController
 
   def show
     set_tip
+    set_comment
+    
+    
+    
   end
 
 
@@ -28,6 +32,8 @@ def downvote
    redirect_back(fallback_location: root_path)
 end
 
+
+
   private
 
   def tip_params
@@ -37,11 +43,13 @@ end
   def set_tip
     @tip = Tip.friendly.find(params[:id])
   end
-
+  
 
   def set_user
     @user = User.friendly.find(params[:user_id])
   end
   
-
+  def set_comment
+  @new_comment = Comment.build_from(set_tip, set_user, "")
+  end
 end

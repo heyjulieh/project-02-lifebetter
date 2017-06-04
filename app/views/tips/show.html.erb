@@ -1,2 +1,4 @@
 <%= @tip.title %>
 <%= @tip.content %>
+
+<%= render partial: "comments/template", locals: {commentable: @tips, new_comment: @comment} %> 

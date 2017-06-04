@@ -1,7 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Quicksand:300,400,500,700|Teko:300,400,500,600,700');
-
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -420,8 +419,71 @@ html, body {
   margin-bottom: 15px;
   display: block;
   width: 100%;
-  font-family: 'Nunito Sans', sans-serif;
+  h2 {
+    font-family:'Nunito Sans', sans-serif;   
+  }
+}
+
+//login
+
+.form {
+  background-color: $yellow-gold;
+  margin-bottom: 15px;
+  display: block;
+  width: 100%; 
+}
+
+.field {
+  background-color: white;
+  margin-bottom: 30px;
+  display: block;
+  width: 40%;
+  h2 {
+    font-family:'Nunito Sans', sans-serif;
+    margin-bottom: 30px;   
+  }
+#user_username {
+  background-color: $yellow-gold;
+  }
+
+#user_password {
+background-color: $yellow-gold;
+  }
+#user_remember_me {
+text-color: red; 
+ }
 }
 
 
+
+// for comment template
+
+.comments-header {
+  border-bottom: 1px dotted gray;
+  margin-bottom: 10px;
+}
+
+.comments-container {
+  p {
+    margin-bottom: 0px;
+  }
+  .comment-nav {
+    margin-left: 5px;
+    margin-bottom: 10px;
+
+    a {
+      font-size: 10px;
+      font-weight: bold;
+      color: #888;
+    }
+  }
+}
+
+.reply-form {
+  display: none;
+}
+
+.comments-show {
+  margin-left: 25px;
+}
 

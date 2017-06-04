@@ -5,11 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'acts_as_commentable_with_threading'
 
 gem 'acts_as_votable', '~> 0.10.0'
 
 
-gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git" 
 
 gem 'friendly_id', '~> 5.1.0'
 
@@ -31,6 +32,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 #gem 'turbolinks', '~> 5'

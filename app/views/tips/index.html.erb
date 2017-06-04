@@ -1,6 +1,8 @@
 
 <% @tips.each do |tip| %>
 
+	
+
 	<%= link_to like_tip_path(tip), method: :put do %>
 	 	<span class= "glyphicon glyphicon-thumbs-up"></span>
 	  		<%= tip.get_upvotes.size %>
