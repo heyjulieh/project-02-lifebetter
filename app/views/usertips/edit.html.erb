@@ -1,3 +1,6 @@
+<%= render ('/layouts/largenav') %>
+<%= link_to "Back", :back %>
+<h1>Edit Your Tip</h1>
 <%= form_for @tip, url: update_user_tip_path, method: "patch" do |f| %>
   <div>
     <%= f.text_field :title, placeholder: "Title" %>
