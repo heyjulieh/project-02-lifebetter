@@ -1,5 +1,8 @@
 %header
   .jumbotron
+    %span
+    - flash.each do |name, msg|
+      = msg
     .pull-right
       - if signed_in?
         %span
