@@ -1,4 +1,4 @@
-= render ('/layouts/largenav')
+= render ('/layouts/smallnav')
 
 -# Navbar Start
 .container-fluid
@@ -43,13 +43,16 @@
           .row
             .col-sm-12.col-md-12.col-lg-12
               .usertip-title
-
                 %h3
                   = tip.title
+
                 .container-fluid.content
-                  = tip.content
-                  .pull-right
-                    = image_tag tip.avatar.url, height:"190px"
+                  .col-sm-8
+                    .pull-left
+                      = tip.content
+                  .col-sm-4
+                    .pull-right
+                      = image_tag tip.avatar.url, height:"190px"
                 .pull-left
                   = link_to tip.genre, genre_path(tip.genre)
                   - if current_user == @user

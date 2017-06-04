@@ -53,9 +53,11 @@
                   by
                   = link_to tip.user.username, user_path(tip.user)
                 .container-fluid.content
-                  = tip.content
-                  .pull-right
-                    = image_tag tip.avatar.url, height:"190px"
+                  .col-sm-8
+                    = tip.content
+                  .col-sm-4
+                    .pull-right
+                      = image_tag tip.avatar.url, height:"190px"
                 .pull-left
                   = link_to tip.genre, genre_path(tip.genre)
                   - if !current_user.nil? && current_user == tip.user

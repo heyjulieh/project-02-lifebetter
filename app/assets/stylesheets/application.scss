@@ -26,13 +26,19 @@ $dark-red: #d00a0a;
 
 html, body {
   height: 100%;
+  input {
+    background-color: $yellow-gold;
+  }
 }
 // t e m p l a t e
 .jumbotron {
    margin: auto;
    background-color: $life-red;
    color: white;
-   height: 220px;
+   height: 250px;
+   width: 100%;
+   position: relative;
+   clear: both;
      span {
        font-size: 16px;
        margin-right: 10px;
@@ -80,8 +86,10 @@ html, body {
        border-style: none;
        padding: 10px;
        font-family: 'Nunito Sans', sans-serif;
+       font-size: 12px;
        color: $black-grey;
        background-color: $yellow-gold;
+       text-transform: uppercase;
      }
      .pull-right {
        display: inline-block;
@@ -156,6 +164,16 @@ html, body {
     margin-bottom: 15px;
     float: none;
   }
+  h3 {
+    display: inline-block;
+    font-family: 'Teko', sans-serif;
+    text-align: left;
+    width: 70%;
+    font-size: 40px;
+    color: $sky-blue;
+    margin-bottom: 0px;
+    margin-left: 10px;
+  }
   h4 {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 200;
@@ -168,9 +186,14 @@ html, body {
     background-color: $yellow-gold;
     color: $black-grey;
     width: 70%;
-    height: 110px;
-    margin: auto;
-    padding: 15px;
+    height: 100%px;
+    margin-bottom: 20px;
+    padding: 20px;
+      h5 {
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Quicksand', sans-serif;
+      }
   }
   img {
     text-align: center;
@@ -234,6 +257,16 @@ html, body {
   padding: 15px 0 15px 0;
   background: $life-red;
   height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 150;
+  margin-top: -2px;
+    .profile-sidebar-scrolled {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+    }
 }
 .profile-userpic img {
   float: none;
@@ -313,18 +346,18 @@ html, body {
       background-color: white;
       font-size: 16px;
       height: 200px;
-      margin: 5px;
       padding-right: 0;
     }
     .pull-left {
-      font-size: 14px;
+      font-size: 16px;
       margin-top: 5px;
-      margin-left: 5px;
+    }
+    .col-sm-4 {
+      margin-right: 0px;
     }
     .pull-right {
       font-size: 14px;
       margin-top: 5px;
-      margin-right: 5px;
       @media only screen and (max-width: 1026px) {
           img {
             display: none;
@@ -370,18 +403,18 @@ html, body {
     color: $black-grey;
     font-size: 16px;
     height: 200px;
-    margin: 5px;
     padding-right: 0;
   }
   .pull-left {
     font-size: 14px;
     margin-top: 5px;
-    margin-left: 5px;
+  }
+  .col-sm-4 {
+    margin-right: 0px;
   }
   .pull-right {
     font-size: 14px;
     margin-top: 5px;
-    margin-right: 5px;
     @media only screen and (max-width: 1026px) {
         img {
           display: none;
@@ -391,6 +424,14 @@ html, body {
   .glyphicon {
     margin-left: 5px;
     color: $yellow-gold;
+  }
+  a {
+    display: inline-block;
+    color: $yellow-gold;
+    margin-right: 10px;
+    a:hover {
+      color: white;
+    }
   }
 }
 
@@ -449,11 +490,16 @@ html, body {
     background-size: cover;
     width: 100%;
     background-position: 100%;
+    @media only screen and (max-width: 1026px) {
+        p {
+          display: none;
+        }
+    }
   }
   .info {
     position: relative;
     top: 52%;
-    max-width: 630px;
+    max-width: 70%;
     margin: 0 auto;
     padding: 0 18px;
     -webkit-transform: translateY(-50%);
@@ -465,11 +511,24 @@ html, body {
     margin-bottom: 10px;
     font-size: 40px;
     font-weight: 800;
+    font-family: 'Quicksand', sans-serif;
+    text-align: left;
   }
   p {
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 0
+    margin-bottom: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: justify;
+  }
+  a {
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    color: $sky-blue;
+    font-weight: 500;
+  }
+  a:hover {
+    text-decoration: none;
   }
   .team {
     display: block;
@@ -479,6 +538,7 @@ html, body {
     h3 {
       margin-top: 0;
       margin-bottom: 10px;
+      text-align: left;
     }
     img {
       width: 200px;
@@ -486,11 +546,15 @@ html, body {
       border-radius: 50%;
     }
     p {
-      font-size: 15px;
+      display: inline-block;
+      font-size: 16px;
+      font-family:'Nunito Sans', sans-serif;
+      padding-bottom: 15px;
+      padding-top: 15px;
     }
     .member {
-      height: 400px;
-      margin: auto
+      margin: auto;
+      padding: 30px;
     }
   }
 }
@@ -520,6 +584,23 @@ html, body {
   .logo-left {
     float: left;
     margin-top: 5px;
+    display: inline-block;
+    p {
+      display: inline-block;
+      margin: auto;
+      }
+    .life {
+      font-family: 'Teko', sans-serif;
+      font-size: 40px;
+      margin-left: 10px;
+      font-weight: 500;
+    }
+    .better {
+      font-family: 'Quicksand';
+      font-size: 35px;
+      margin-left: 5px;
+      font-weight: 200;
+    }
   }
   a {
     color: white;
@@ -589,7 +670,7 @@ html, body {
   input, textarea {
     background-color: $yellow-gold;
     border-width: 0;
-    height:15px;
+    height:20px;
     padding: 20px;
     margin-bottom: 20px;
     width: 90%;
@@ -598,33 +679,78 @@ html, body {
     height: 150px;
   }
   input[type="Submit"] {
-    width: 100px;
-    height: 60px;
-    font-weight: 800;
-    font-size: 15px
+    height: 50px;
+    width: 87px;
+    font-family: 'Nunino Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 300;
+    margin: auto;
+    background-color: $sky-blue;
+    color: white;
+
   }
   select[name="tip[genre]"] {
     width: 150px;
     margin-bottom: 30px;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: white;
+    border-radius: 0;
+    border: none;
+    padding: 10px;
   }
   .genre-select, .pic-select {
     margin-top: 40px;
     margin-bottom: 10px;
     font-weight: 600;
     border: 2px solid $yellow-gold
+    overflow: hidden;
+    #tip_avatar {
+      width: 60%;
+      margin: auto;
+      text-align: center;
+      background-color: $yellow-gold;
+    }
   }
-  input[type="file"] {
-    margin-left: 80px;
-    background-color: white;
+  .pic-select {
+    padding-bottom: 30px;
+    border: 2px solid $yellow-gold;
+    border-radius: 5px;
+    input[type="file"] {
+      background-color: $yellow-gold;
+      font-family: 'Nunito Sans', sans-serif;
+      padding-left: 40px;
+    }
   }
   .yellow {
     margin-top: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .tip-edit {
+    padding-top: 38px;
+    padding-bottom: 37px;
+    background-color: $yellow-gold;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
   .content {
     margin-top: 20px;
     p {
       font-weight: 700;
       display: block
+    }
+    #tip_title {
+      padding-top: 15px;
+      background-color: white;
+      border: 2px;
+      border-radius: 5px;
+    }
+    #tip_content {
+      background-color: white;
+      border: 2px;
+      border-radius: 5px;
     }
   }
   .back {
