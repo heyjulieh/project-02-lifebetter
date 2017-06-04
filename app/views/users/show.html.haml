@@ -1,5 +1,6 @@
--# Navbar Start
+= render ('/layouts/largenav')
 
+-# Navbar Start
 .container-fluid
   .row.profile
     .col-sm-3.col-md-3.col-lg-3
@@ -30,6 +31,7 @@
             %li
               %a{:href => "/genres/travel"}
                 Travel
+
     .col-sm-9.col-md-9.col-lg-9.tipsdiv
       - if current_user == @user
         %h1 TIPS by YOU!
@@ -51,9 +53,9 @@
                 .pull-left
                   = link_to tip.genre, genre_path(tip.genre)
                   - if current_user == @user
-                    = link_to delete_user_tip_path(@user.id, tip.id), data: { confirm: "Are you sure you want to delete this tip?" }, method: :delete do
+                    = link_to delete_user_tip_path(@user, tip), data: { confirm: "Are you sure you want to delete this tip?" }, method: :delete do
                       %span.glyphicon.glyphicon-remove
-                    = link_to edit_user_tip_path(@user.id, tip.id) do
+                    = link_to edit_user_tip_path(@user, tip) do
                       %span.glyphicon.glyphicon-pencil
                 .pull-right
                   = link_to like_tip_path(tip), method: :put do

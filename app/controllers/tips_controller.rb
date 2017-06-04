@@ -1,5 +1,5 @@
 class TipsController < ApplicationController
-
+  before_action :vote_access
 
   def index
     @tips = Tip.all
@@ -37,6 +37,12 @@ class TipsController < ApplicationController
 
   def set_user
     @user = User.friendly.find(params[:user_id])
+  end
+
+  def vote_access
+    if !user_signed_in?
+      flash[:notice] = "You must be logged in to vote!"
+    end
   end
 
 end

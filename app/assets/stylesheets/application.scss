@@ -22,6 +22,7 @@ $dark-grey: #4F4F4F;
 $black-grey: #333333;
 $sky-blue: #2D98DF;
 $life-red: #E92828;
+$dark-red: #d00a0a;
 
 html, body {
   height: 100%;
@@ -98,10 +99,13 @@ html, body {
   color: white;
   padding-top: 15px;
   margin-top: 50px;
-  position: absolute
+  position: relative;
   ul {
     list-style-type: none;
     font-family: 'Nunito Sans', sans-serif;
+  }
+  a {
+    color: white;
   }
   li {
     padding-top: 10px;
@@ -401,10 +405,6 @@ html, body {
     margin-bottom: 20px;
     width: 90%;
   }
-  .actions {
-    height: 100px;
-    border-style: none;
-  }
   .content {
     margin-top: 30px;
   }
@@ -412,19 +412,222 @@ html, body {
     background-color: white;
     font-family: 'Nunito Sans', sans-serif;
   }
-  img {
-    margin-top: 30px;
-  }
-  h2 {
-    color: $sky-blue;
-    font-weight: 800;
-    text-transform: capitalize;
+  h1 {
     text-align: center
   }
   label {
     margin: 0
   }
   .cancel {
-    margin-top: 50px;
+    margin-top: 20px;
   }
+  input[type="Submit"] {
+    width: 100px;
+    height: 60px;
+    font-weight: 800;
+    font-size: 15px;
+    margin: 0;
+  }
+  .actions {
+    margin: 0;
+    text-align: center
+  }
+  .profilepic {
+    margin-top: 50px;
+    font-weight: 700
+  }
+}
+
+// a b o u t  u s  p a g e
+.about-us {
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  .bg {
+    display: block;
+    height: 400px;
+    background-image: url(about.jpg);
+    background-size: cover;
+    width: 100%;
+    background-position: 100%;
+  }
+  .info {
+    position: relative;
+    top: 52%;
+    max-width: 630px;
+    margin: 0 auto;
+    padding: 0 18px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: white;
+  }
+  h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: 800;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0
+  }
+  .team {
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 15px;
+    h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+    }
+    p {
+      font-size: 15px;
+    }
+    .member {
+      height: 400px;
+      margin: auto
+    }
+  }
+}
+
+
+// s m a l l  n a v  b a r
+.jumbotron-small {
+  z-index: 100;
+  width: 100%;
+  margin: auto;
+  background-color: $life-red;
+  color: white;
+  height: 60px;
+  span {
+    font-size: 16px;
+    margin-right: 10px;
+    a {
+      color: $yellow-gold;
+    }
+  }
+  ul {
+    list-style-type: none;
+  }
+  li {
+    display: inline-block;
+  }
+  .logo-left {
+    float: left;
+    margin-top: 5px;
+  }
+  a {
+    color: white;
+  }
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+  .dropbtn {
+    padding: 16px;
+    font-size: 16px;
+    height: 60px;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    a {
+      background-color: $dark-red;
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block
+    }
+    a:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+  }
+  .dropdown:hover .dropdown-content {
+    display: block
+  }
+  .dropdown:hover .dropbtn {
+    background-color: $dark-red;
+  }
+  .button_to {
+    margin: 0px 10px 0px 0px;
+    display: inline-block;
+    border-style: none;
+    padding: 10px 3px 10px 3px;
+    font-family: 'Nunito Sans', sans-serif;
+    input {
+      width: 100%;
+      margin: auto;
+      border-style: none;
+      padding: 10px;
+      font-family: 'Nunito Sans', sans-serif;
+      color: $black-grey;
+      background-color: $yellow-gold;
+    }
+  }
+}
+
+// t i p  f o r m
+.tip {
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  .row {
+    margin-top: 40px;
+  }
+  input, textarea {
+    background-color: $yellow-gold;
+    border-width: 0;
+    height:15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+  }
+  textarea {
+    height: 150px;
+  }
+  input[type="Submit"] {
+    width: 100px;
+    height: 60px;
+    font-weight: 800;
+    font-size: 15px
+  }
+  select[name="tip[genre]"] {
+    width: 150px;
+    margin-bottom: 30px;
+  }
+  .genre-select, .pic-select {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    border: 2px solid $yellow-gold
+  }
+  input[type="file"] {
+    margin-left: 80px;
+    background-color: white;
+  }
+  .yellow {
+    margin-top: 20px;
+  }
+  .content {
+    margin-top: 20px;
+    p {
+      font-weight: 700;
+      display: block
+    }
+  }
+  .back {
+    float: left
+   }
 }
