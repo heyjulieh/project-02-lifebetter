@@ -1,5 +1,4 @@
 -# Navbar Start
-
 .container-fluid
   .row.profile
     .col-sm-3.col-md-3.col-lg-3
@@ -30,6 +29,11 @@
             %li
               %a{:href => "/genres/travel"}
                 Travel
+    - flash.each do |name, msg|
+      %p
+        %small
+          #{msg}
+
     .col-sm-9.col-md-9.col-lg-9.tipsdiv
       - if current_user == @user
         %h1 TIPS by YOU!
@@ -63,3 +67,5 @@
                     %span.glyphicon.glyphicon-thumbs-down
                     = tip.get_downvotes.size
                   = tip.created_at.strftime("%a, %b %d, %Y @ %l:%M %p")
+
+= console
