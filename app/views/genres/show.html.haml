@@ -1,3 +1,5 @@
+
+= render ('/layouts/smallnav')
 -# Navbar Start
 .container-fluid
   .row.profile
@@ -39,10 +41,6 @@
       %h1.home HOME
     - if request.original_fullpath == '/genres/travel'
       %h1.travel TRAVEL
-    - flash.each do |name, msg|
-      %p
-        %small
-          #{msg}
     .col-sm-9.col-md-9.col-lg-9.tipsdiv
       - @tips.each do |tip|
         .container-fluid.alltips

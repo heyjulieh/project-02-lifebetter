@@ -6,25 +6,6 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %header
-      .jumbotron
-        .pull-right
-          - if signed_in?
-            %span
-
-              Welcome, #{link_to current_user.first_name, user_path(current_user)}.
-              = link_to edit_user_registration_path(current_user) do
-                %span.glyphicon.glyphicon-cog
-              = button_to "Sign Out", destroy_user_session_path, :method => :delete
-          - else
-            = button_to "Sign In", new_user_session_path
-            = button_to "Sign Up", new_user_registration_path, :method => :get
-        .text-center
-          %ul
-
-            %a{:href => '/'}
-              %li.life LIFE
-              %li.better better
     = yield
     %footer
       .footer
@@ -34,4 +15,4 @@
           %li CONTACT US
           %li JJAM x GA 2017 / all rights reserved
         .pull-right
-          %p logo here
+          = image_tag('logo.png', height: '50')

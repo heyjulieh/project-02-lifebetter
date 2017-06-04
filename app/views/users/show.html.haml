@@ -1,3 +1,5 @@
+= render ('/layouts/largenav')
+
 -# Navbar Start
 .container-fluid
   .row.profile
@@ -29,10 +31,6 @@
             %li
               %a{:href => "/genres/travel"}
                 Travel
-    - flash.each do |name, msg|
-      %p
-        %small
-          #{msg}
 
     .col-sm-9.col-md-9.col-lg-9.tipsdiv
       - if current_user == @user
@@ -67,5 +65,3 @@
                     %span.glyphicon.glyphicon-thumbs-down
                     = tip.get_downvotes.size
                   = tip.created_at.strftime("%a, %b %d, %Y @ %l:%M %p")
-
-= console

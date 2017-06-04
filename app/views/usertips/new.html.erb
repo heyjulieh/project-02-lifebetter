@@ -1,8 +1,7 @@
-<%= form_for @tip, url: create_user_tip_path, method: "create" do |f| %>
-  <%= f.text_field :title, placeholder: "Title" %>
-  <%= f.text_area :content, placeholder: "Enter your tip here!" %>
-  <%= f.select :genre, ['art', 'beauty', 'health', 'food', 'home', 'travel'] %><br>
-  <%= f.label :avatar %>
-  <%= f.file_field :avatar %>
-  <%= f.submit "Post Tip!" %>
-<% end %>
+<%= render ('/layouts/largenav') %>
+<%= link_to "Back", :back %>
+
+<div class="tip">
+  <h1>Share Your Tip</h1>
+  <%= render ('form') %>
+</div>
