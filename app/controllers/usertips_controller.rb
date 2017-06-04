@@ -1,6 +1,6 @@
 class UsertipsController < ApplicationController
+  before_action :require_ownership
   before_action :authenticate_user!
-  # before_action :require_ownership
 
   # get '/users/:user_id/tips/new', to: 'usertips#new', as: 'new_user_tip'
   def new
@@ -24,13 +24,14 @@ class UsertipsController < ApplicationController
 
   # get '/users/:user_id/tips/:id/edit', to: 'usertips#edit', as: 'edit_user_tip'
   def edit
+    set_user
     set_tip
   end
 
   # patch '/users/:user_id/tips/:id', to: 'usertips#update'
   def update
-    set_tip
     set_user
+    set_tip
     @tip.update_attributes(tip_params)
     flash[:notice] = "Tip successfully updated!"
     redirect_to @user
@@ -71,8 +72,8 @@ class UsertipsController < ApplicationController
   # prevents users from creating, editing, deleting a tip that wasn't created by them
   def require_ownership
     if current_user.nil? || current_user.username != params[:user_id]
-      flash[:notice] = "Sorry, you don't have access to this function"
       redirect_to user_path(current_user)
+      flash[:notice] = "Sorry, you don't have access to this function"
     end
   end
 
