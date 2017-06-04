@@ -1,5 +1,5 @@
 class Tip < ApplicationRecord
-  belongs_to :user, optional: true
+  belongs_to :user
 
   acts_as_votable
 
@@ -8,5 +8,9 @@ class Tip < ApplicationRecord
 
   extend FriendlyId
   friendly_id :title, use: [:finders, :slugged]
+
+  validates :title, :presence=>true, :uniqueness=>{:case_sensitive=>false}
+  validates :genre, :presence=>true
+  validates :content, :presence=>true
 
 end
