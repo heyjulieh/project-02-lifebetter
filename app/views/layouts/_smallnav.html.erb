@@ -3,11 +3,6 @@
     <div class="logo-left">
       <%= link_to image_tag("redlogo.png", height: "50"), root_path %>
     </div>
-    <span>
-    <% flash.each do |name, msg| %>
-        <%= msg %>
-      <% end %>
-    </span>
     <div class="pull-right dropdown">
       <% if signed_in? %>
         <div class="dropbtn">
@@ -25,6 +20,9 @@
       <% end %>
     </div>
   </div>
-
-
+  <span>
+  <% flash.each do |name, msg| %>
+      <%= msg %>
+    <% end %>
+  </span>
 </header>
