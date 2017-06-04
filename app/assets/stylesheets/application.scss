@@ -464,21 +464,24 @@ html, body {
   }
   .team {
     display: block;
-    height: 400px;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 15px;
+    h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
     img {
       width: 200px;
       height: 200px;
-      border-radius: 50%
+      border-radius: 50%;
     }
-    .left-info {
-      display: inline-block;
-      width: 50%;
+    p {
       font-size: 15px;
-      text-align: justify
     }
-    .right-img {
-      position: relative
-
+    .member {
+      height: 280px;
+      margin: auto
     }
   }
 }
