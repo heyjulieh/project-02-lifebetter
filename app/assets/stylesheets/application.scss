@@ -98,10 +98,13 @@ html, body {
   color: white;
   padding-top: 15px;
   margin-top: 50px;
-  position: absolute
+  position: absolute;
   ul {
     list-style-type: none;
     font-family: 'Nunito Sans', sans-serif;
+  }
+  a {
+    color: white;
   }
   li {
     padding-top: 10px;
