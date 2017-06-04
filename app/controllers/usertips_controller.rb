@@ -1,4 +1,6 @@
 class UsertipsController < ApplicationController
+  before_action :require_ownership
+  before_action :authenticate_user!
 
   # get '/users/:user_id/tips/new', to: 'usertips#new', as: 'new_user_tip'
   def new
@@ -22,14 +24,14 @@ class UsertipsController < ApplicationController
 
   # get '/users/:user_id/tips/:id/edit', to: 'usertips#edit', as: 'edit_user_tip'
   def edit
+    set_user
     set_tip
-    # @tip = Tip.find params[:id]
   end
 
   # patch '/users/:user_id/tips/:id', to: 'usertips#update'
   def update
-    set_tip
     set_user
+    set_tip
     @tip.update_attributes(tip_params)
     flash[:notice] = "Tip successfully updated!"
     redirect_to @user
@@ -39,9 +41,14 @@ class UsertipsController < ApplicationController
   def destroy
     set_tip
     set_user
-    @tip.destroy
-    redirect_to @user
-    flash[:notice] = "Deleted!"
+    if @user == current_user
+      @tip.destroy
+      redirect_to @user
+      flash[:notice] = "Deleted!"
+    else
+      redirect_to @user
+      flash[:notice] = "Sorry, you can only delete your own comments!"
+    end
   end
 
   private
@@ -62,7 +69,15 @@ class UsertipsController < ApplicationController
     params.require(:user).permit(:username, :slug)
   end
 
-  # below routes are defined, but i don't know if we need them (-jane)
-  # get '/users/:user_id/tips', to: 'usertips#index', as: 'user_tips'
+  # prevents users from creating, editing, deleting a tip that wasn't created by them
+  def require_ownership
+    if current_user.nil?
+      redirect_to root_path
+      flash[:notice] = "Sorry, you don't have access to this function"
+    elsif current_user.username != params[:user_id]
+      redirect_to user_path(current_user)
+      flash[:notice] = "Sorry, you don't have access to this function"
+    end
+  end
 
 end

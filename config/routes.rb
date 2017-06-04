@@ -1,22 +1,16 @@
 Rails.application.routes.draw do
-  get 'new/genre'
-
 
   devise_for :users
 
-  # resources :genres
   resources :tips do
-
-    member do
-     put "like", to: "tips#upvote"
-      put "dislike", to: "tips#downvote"
+      member do
+       put "like", to: "tips#upvote"
+        put "dislike", to: "tips#downvote"
+    end
   end
-end
-
-
- 
 
   root 'index#index'
+  get '/about', to: 'index#about'
 
   get '/genres/:genre', to: 'genres#show', as: 'genre'
 
@@ -28,6 +22,6 @@ end
   patch '/users/:user_id/tips/:id', to: 'usertips#update', as: 'update_user_tip'
   delete '/users/:user_id/tips/:id', to: 'usertips#destroy', as: 'delete_user_tip'
 
-  # route to redirect users to root if they enter invalid URL?
-
+  # route to redirect users to root if they enter invalid URL
+  match '*path', to: 'index#index', via: :all
 end

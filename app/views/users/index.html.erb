@@ -1,9 +1,9 @@
-<h1>List of Users</h1>
+<%= render ('/layouts/largenav') %>
 
-<p>Maybe restrict this page for page admins? </p>
+<h1>Check Out Our Community of Tip Givers</h1>
 
 <ul>
   <% @users.each do |user| %>
-    <li>Name: <%= user.first_name %> <%=user.last_name %>. ID: <%=user.id%></li>
+    <li><%= link_to user.username, user_path(user)%></li>
   <% end %>
 </ul>
