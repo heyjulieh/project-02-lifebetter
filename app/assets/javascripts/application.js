@@ -15,3 +15,19 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require_tree .
+
+var hdr, mn, mns;
+
+mn = $('.jumbotron');
+
+mns = 'jumbotron-scrolled';
+
+hdr = $('header').height();
+
+$(window).scroll(function() {
+  if ($(this).scrollTop() > hdr) {
+    mn.addClass(mns);
+  } else {
+    mn.removeClass(mns);
+  }
+});

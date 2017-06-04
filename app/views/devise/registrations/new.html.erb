@@ -1,3 +1,5 @@
+<%= render ('/layouts/largenav') %>
+
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -22,8 +24,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :age %><br />
-    <%= f.text_field :age %>
+    <%= f.label :birthday %><br />
+    <%= f.date_select :birthday, start_year: 1900, end_year: 2017 %>
   </div>
 
   <div class="">
