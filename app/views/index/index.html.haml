@@ -6,25 +6,13 @@
         %h5
           = @tip.content
         %h5.pull-right
-          by
+          \- 
           = @tip.user.username
     .col-sm-4.align-self-center
       = link_to image_tag( 'art1.jpg'), '/genres/art'
       .text art
     .col-sm-4.align-self-center
 
-- else
-  .container-fluid.user-true
-    .row.justify-content-center
-      .col-sm-12.align-self-center
-        %h3 TIP OF THE DAY
-        .bigtip
-          %h5 Use coconut oil in your hair once a week to get super soft hair that lasts a month!
-          %h5 -User1234
-      .col-sm-4.align-self-center
-        = link_to image_tag( 'art1.jpg'), '/genres/art'
-        .text art
-      .col-sm-4.align-self-center
       = link_to image_tag( 'beauty1.jpg'), '/genres/beauty'
       .text beauty
     .col-sm-4.align-self-center
@@ -38,6 +26,7 @@
       .text home
     .col-sm-4.align-self-center
       = link_to image_tag( 'travel2.jpg'), '/genres/travel'
+
       .text travel
 
 

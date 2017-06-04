@@ -1,0 +1,17 @@
+= form_for @tip, url: create_user_tip_path, method: "create" do |f|
+  .container-fluid.edit-tip
+    .row.edit-tip
+      .col-sm-4.col-4.col-md-offset-2.col-sm-offset-2.tip-edit
+        .genre-select
+          %p.yellow Select a Genre
+          = f.select :genre, ['art', 'beauty', 'food', 'health', 'home', 'travel']
+        .pic-select
+          %p.yellow Choose a Picture
+          = f.file_field :avatar
+      .col-sm-4.col-md-4.content
+        %p.yellow Title
+        = f.text_field :title, placeholder: "Title"
+        %p.yellow Content
+        = f.text_area :content, placeholder: "Enter your tip here!", rows: "5"
+    .row
+      = f.submit "Post It!"
