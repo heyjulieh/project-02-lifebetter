@@ -60,10 +60,10 @@
                     = image_tag tip.avatar.url, height:"190px"
                 .pull-left
                   = link_to tip.genre, genre_path(tip.genre)
-                  - if !current_user.nil? && current_user == @user
-                    = link_to delete_user_tip_path(current_user.id, tip.id), data: { confirm: "Are you sure you want to delete this tip?" }, method: :delete do
+                  - if !current_user.nil? && current_user == tip.user
+                    = link_to delete_user_tip_path(current_user, tip), data: { confirm: "Are you sure you want to delete this tip?" }, method: :delete do
                       %span.glyphicon.glyphicon-remove
-                    = link_to edit_user_tip_path(current_user.id, tip.id) do
+                    = link_to edit_user_tip_path(current_user, tip) do
                       %span.glyphicon.glyphicon-pencil
                 .pull-right
                   = link_to like_tip_path(tip), method: :put do
