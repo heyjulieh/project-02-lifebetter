@@ -11,10 +11,11 @@
             Welcome, #{link_to current_user.first_name, user_path(current_user)}.
             = link_to edit_user_registration_path(current_user) do
               %span.glyphicon.glyphicon-cog
-            = button_to "Sign Out", destroy_user_session_path, :method => :delete
+            = button_to "Sign Out", destroy_user_session_path, :method => :delete, class: "signout"
         - else
-          = button_to "Sign In", new_user_session_path
-          = button_to "Sign Up", new_user_registration_path, :method => :get
+          .sign_in
+          = button_to "Sign In", new_user_session_path, class: "signin"
+          = button_to "Sign Up", new_user_registration_path, :method => :get, class: "signup"
       .text-center
         %ul
 
