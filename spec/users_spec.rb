@@ -2,6 +2,7 @@ require 'rspec'
 require 'rails_helper'
 require 'spec_helper'
 puts "------running Rspec in #{Rails.env} environment-------"
+puts "start of Sign-Up test (./spec/usertips_spec.rb)"
 # require '../app/controllers/users_controller'
 
 RSpec.configure do |config|
@@ -31,12 +32,3 @@ describe UsersController, :type => :controller do
     expect(response).to render_template(:index)  # index is route for homepage
   end
 end
-
-# describe “GET index” do
-#   it “assigns @users” do
-#     user = FactoryGirl.create(:user)
-#     get :index
-#     expect(assigns(:users)).to eq([user])
-
-#   end
-# end

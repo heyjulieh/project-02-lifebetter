@@ -51,6 +51,7 @@ user_5.tips = Tip.create([
 user_6 = User.create({email: "addy@ga.com", password: "123456", first_name: "Addy", last_name: "Kumar", username: "addyGA", birthday: "1992-02-05", location: "East Bay"})
 user_6.tips = Tip.create([
   {genre: "health", title: "Sleep more!", content: "Get enough sleep. Lack of sleep can lead to premature aging and over-eating!"},
+  {genre: "health", title: " you are not able to sleep at night?", content: "Drink some warm milk before sleeping should have you sleep faster"},
   {genre: "travel", title: "Beautiful Place to Hike In SF", content: "My top picks for hiking in sf are -Mount Davidson - Twin Peaks - Batteries To Bluffs -Lands End -Fort Funston"},
   {genre: "travel", title: "My top Travel Tips", content: "Be Flexible, Make a List, Learn Common Phrases of the Local Language, Don't Forget an Extra Camera Battery (or Two),Always Bring a Sarong,Always Buy Travel Insurance,Make Photocopies of Important Documents,Pack Extra Underwear"},
   {genre: "travel", title: "Tips for having an Awesome road trip", content: "-clean your car before the trip. -check your vehicle. -have a loose plan. -get off the highways. -have an escape plan to get off country roads."},
