@@ -76,4 +76,4 @@
                   = link_to dislike_tip_path(tip), method: :put do
                     %span.glyphicon.glyphicon-thumbs-down
                     = tip.get_downvotes.size
-                  = tip.created_at.strftime("%a, %b %d, %Y @ %l:%M %p")
+                  = tip.created_at.strftime("%a, %b %d, %Y @ %l:%M %p %Z")
