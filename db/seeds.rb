@@ -51,9 +51,12 @@ user_5.tips = Tip.create([
 user_6 = User.create({email: "addy@ga.com", password: "123456", first_name: "Addy", last_name: "Kumar", username: "addyGA", birthday: "1992-02-05", location: "East Bay"})
 user_6.tips = Tip.create([
   {genre: "health", title: "Sleep more!", content: "Get enough sleep. Lack of sleep can lead to premature aging and over-eating!"},
-  {genre: "travel", title: "Pack Less", content: "Always pack so that you have plenty of room in your luggage to bring back stuff from your travel destination! "},
+  {genre: "travel", title: "Beautiful Place to Hike In SF", content: "My top picks for hiking in sf are -Mount Davidson - Twin Peaks - Batteries To Bluffs -Lands End -Fort Funston"},
+  {genre: "travel", title: "My top Travel Tips", content: "Be Flexible, Make a List, Learn Common Phrases of the Local Language, Don't Forget an Extra Camera Battery (or Two),Always Bring a Sarong,Always Buy Travel Insurance,Make Photocopies of Important Documents,Pack Extra Underwear"},
+  {genre: "travel", title: "Tips for having an Awesome road trip", content: "-clean your car before the trip. -check your vehicle. -have a loose plan. -get off the highways. -have an escape plan to get off country roads."},
   {genre: "home", title: "On the market for furniture? ", content: "Try Craigslist or even Facebook to look for bargains in gently used furniture. No need to drop 7 grand on that new couch from Crate and Barrel!"},
-  {genre: "home", title: "Garbage disposal overused?", content: "Throw in a lemon peel and hot water to give that garbage disposal a fresh cleaning"}
+  {genre: "home", title: "Garbage disposal overused?", content: "Throw in a lemon peel and hot water to give that garbage disposal a fresh cleaning"},
+  {genre: "home", title: "Zap clean you microwave crap!", content: "Use white distilled vingear and it will leave your microwave sparkling like before"}
   ])
 user_7 = User.create({email: "michael@ga.com", password: "123456", first_name: "Michael", last_name: "Laird", username: "michaelGA", birthday: "1995-05-05", location: "San Francisco"})
 user_7.tips = Tip.create([
