@@ -2,7 +2,9 @@
 
 project-02-lifebetter - https://life-better.herokuapp.com/
 
-Users can add tips for life, that readers can see and vote up or down
+Users can add tips for life. They can peruse tips, and vote up or down on tips they love/hate.
+
+Where Lifehacker meets Facebook meets Imgur.
 
 ## Technologies Used
 
@@ -18,7 +20,7 @@ gem 'rspec' - to run tests
 gem 'capybara' - further tests on website views
 gem 'birthday' - Sign-Up sheet allows user to scroll to a birthday
 
-## Code I'm Proud Of
+## Code Addy is Proud Of
 ```
   RSpec.feature "Logins", type: :feature do
     user = User.create(username: "testman", password: "123456")  
@@ -132,7 +134,7 @@ in app/controllers/index_controller.rb
 
 
 
-# For future Project
+# Project TBD in the Future
 
 ## Adding comments
 ##### Again we started with researching for the commentator gem but will probably use acts_as_commentable with threading for our project’s needs. 
@@ -142,3 +144,163 @@ in app/controllers/index_controller.rb
 
 ### Full testing of app 
 #### So far there are three tests, to show some possibilies of rspec testing.
+
+
+# 2 Big Keys to a Responsive Website w/ Bootstrap
+
+(This bit assumes you have added bootstrap to your html/css page.)
+
+## Fix-ing Navbars and Affix-ing Sidebars
+A great thing about Bootstrap is the ability to set sticky navbars/sidebars.. and really anything to the edges of a page. This is really useful when you have a lot of scrolling on a single page-- or are creating single page websites (which is super popular 
+right now).
+
+### For Navbars 
+#### (or jumbotrons, or anything you want to stick horizontally to the top of the page)
+You'll want to add div classes to the object you're trying to stick to the top of the page.
+The one specific class you'll want to add is ```.navbar-fixed-top```besides the ```.navbar``` or ```.jumbotron``` or whatever class names you have for your div. This is super simple. This one bootstrap class name sets up the proper css and javascript in the background to make sure the navbar remains fixed but allows content to continue scrolling. However, there are CSS stylings you want to do + avoid:
+  1. You'll want to have a positive z-index for the navbar so that content scroll under the navbar.
+  2. Avoid setting a position (i.e. relative, absolute, fixed, etc.-- none of that!) because this messes with what Bootstrap has set up.
+  3. You'll want to set your body's ```height``` to 100% and ```padding-top``` to some percent (depending on the height of your navbar).
+  4. Depending on the height of your jumbotron/navbar,you'll finally set the content's ```margin-top``` to some positive number greater or equal to the navbar's height.
+  5. Remember, you don't need to do any javascript or jquery with this-- unless you want to add additional functions.
+
+Here's an example of it being used on a jumbotron/navbar using Ruby on Rails:
+```
+<div class="jumbotron-small navbar-fixed-top">
+    <div class="logo-left">
+      <a href="/"><p class="logo-left">COOL</p><p class="logo-right">page</p></a>
+    </div>
+    <div class="pull-right dropdown">
+      <% if signed_in? %>
+        <div class="dropbtn">
+          Welcome, User!
+          <%= image_tag("dropdown.png", height: "30") %>
+        </div>
+        <div class="dropdown-content">
+          <%= link_to "View Profile", user_path(current_user) %>
+          <%= link_to "Settings", edit_user_registration_path(current_user) %>
+          <%= link_to "Art", '/genres/art' %>
+          <%= link_to "Beauty", '/genres/beauty' %>
+          <%= link_to "Food", '/genres/food' %>
+          <%= link_to "Health", '/genres/health' %>
+          <%= link_to "Home", '/genres/home' %>
+          <%= link_to "Travel", '/genres/travel' %>
+          <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+        </div>
+      <% else %>
+        <%= button_to "Sign In", new_user_session_path %>
+        <%= button_to "Sign Up", new_user_registration_path, :method => :get %>
+      <% end %>
+    </div>
+  </div>
+  ```
+Here's an example of the CSS:
+```
+body {
+  height: 100%;
+  padding-top: 130px;
+}
+.jumbotron {
+ margin: auto;
+ color: white;
+ height: 250px;
+ clear: both;
+ z-index: 100;
+}
+.main-content {
+  padding: 15px 0 15px 0;
+  width: 20%;
+  margin-top: 100px;
+  margin: auto;
+  z-index: 150;
+}
+```
+
+### For Sidebars
+#### (or any vertical list of objects you want to stick vertically to your page)
+You'll want to add div classes to the object you're trying to stick to the left or right of the page.
+There are two specific class you'll want to add to your sidebar or vertical list of objects  ```.nav-stacked``` and ```.affix``` besides the ```#sidebar``` or ```ul``` or whatever class names you have for your verticla div. This is a bit more complicated than the horizontal navbar/jumbotron as you'll now need two classes. Like the horizontal example, these Bootstrap classes set up the proper css and javascript in the background to make sure the sidebar remains fixed but allows content to continue scrolling. Again, there are CSS stylings you want to do + avoid:
+  1. You'll want to have a positive z-index for the sidebar so that content scroll under the navbar
+  2. Avoid setting a position (i.e. relative, absolute, fixed, etc.-- none of that!) because this messes with what Bootstrap has set up.
+  3. You'll want to set your body's ```height``` to 100% and a ```padding-top``` of some percent.
+  4. Or you can set the content's ```margin-top``` depending on where the sidebar to be affixed.
+  5. Remember, you don't need to do any javascript or jquery with this-- unless you want to add additional functions.
+
+Here's an example of it being used on a sidebar using Haml on Rails (another language similar to Ruby ERB-- but DRYer!)
+```
+.container-fluid
+  .row.
+    .col-sm-3.col-md-3.col-lg-3
+      .sidebar.nav-stacked.affix#sidebar
+        .profile-userpic
+          %a{:href => user_path}
+            = image_tag @user.avatar.url, class: "img-responsive" #size: "150x100" or (:medium)
+        .profile-usermenu
+          %ul.nav.add_tip
+            = link_to "Add New Tip", new_user_tip_path
+          %ul.nav
+            %li
+              %a{:href => "/genres/art"}
+                Art
+            %li
+              %a{:href => "/genres/beauty"}
+                Beauty
+            %li
+              %a{:href => "/genres/health"}
+                Fitness/Health
+            %li
+              %a{:href => "/genres/food"}
+                Food
+            %li
+              %a{:href => "/genres/home"}
+                Home/Living
+            %li
+              %a{:href => "/genres/travel"}
+                Travel
+```
+Here's the CSS: 
+```
+.sidebar {
+  display: inline-block;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+```
+
+Here's a good resource for affixing navbars/sidebars:
+
+- https://www.bootply.com/100983
+- https://www.w3schools.com/bootstrap/bootstrap_affix.asp
+  
+
+## Hiding Objects At a Certain Width
+While this is not a Bootstrap thing, this is something that only works in ES6+ browsers-- and is super handy in making sure your website is simplified when a user resizes their screens or when they're looking at your site from a mobile phone. The only thing you have to do is use CSS! Specifically, this is called the @media rule. You can use it to affect media based on the pages viewheight (vh), resolution, orientation (portrait or landscape), and a lot of other media measurements.
+
+For example, if I want the sidebar to be hidden when a screen resizes to a size of 926px or smaller, the CSS looks like this:
+```
+@media only screen and (max-width: 926px) {
+    #sidebar {
+      display: none;
+    }
+}
+```
+Basically, the major code here is ```@media only screen and (max-width: [screensize#]px) {}```. Then within the closing brackets, you'll want to set the objects you want to hide when the screen size limit is met-- which in this case, is anything with an id name of sidebar, and ```display: none``` within it.
+
+Here's another example-- where I want to hide anything with a p tag when the screen is 1026 or smaller:
+```
+@media only screen and (max-width: 1026px) {
+        p {
+          display: none;
+        }
+    }
+```
+
+For more information, you can visit:
+
+- https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
+- https://www.emailonacid.com/blog/article/email-development/emailology_media_queries_demystified_min-width_and_max-width
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+
