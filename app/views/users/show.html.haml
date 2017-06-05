@@ -1,21 +1,20 @@
 = render ('/layouts/smallnav')
-
 -# Navbar Start
 .container-fluid
-  .row.profile
+  .row.profile-user
     .col-sm-3.col-md-3.col-lg-3
-      .profile-sidebar
-
+      .profile-sidebar.nav-stacked.affix#sidebar
         -# User Pic
         .profile-userpic
           %a{:href => user_path}
             = image_tag @user.avatar.url, class: "img-responsive" #size: "150x100" or (:medium)
-
-        -# Menu
         .profile-usermenu
           %ul.nav.add_tip
             = link_to "Add New Tip", new_user_tip_path
           %ul.nav
+            %li
+              %a{:href => "/genres/art"}
+                Art
             %li
               %a{:href => "/genres/beauty"}
                 Beauty
@@ -31,13 +30,11 @@
             %li
               %a{:href => "/genres/travel"}
                 Travel
-
-    .col-sm-9.col-md-9.col-lg-9.tipsdiv
+    .col-sm-9.col-md-9.col-lg-9
       - if current_user == @user
         %h1 TIPS by YOU!
       - else
-        %h1
-          TIPS by #{@user.username}
+        %h1 TIPS by #{@user.username}
       - @tips.each do |tip|
         .container-fluid.tips
           .row
@@ -45,7 +42,6 @@
               .usertip-title
                 %h3
                   = tip.title
-
                 .container-fluid.content
                   .col-sm-8
                     .pull-left
