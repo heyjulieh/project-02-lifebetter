@@ -1,10 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-# README
-
 project-02-lifebetter - https://life-better.herokuapp.com/
-
 
 Users can add tips for life, that readers can see and vote up or down
 
@@ -85,4 +81,35 @@ then in terminal run: rspec
 ##### The acts_as_commentable gem works well with acts_as _votable and the two are easier to integrate in a project. This gem also counts the of comments per tip. In the future, we hope to render our comments on the genre page with threaded comments
 
 
+## Paperclip
+
+### Allows users to upload photos. We added this to our User and Tip model.
+     rails g paperclip user avatar // create avatar column for user model
+     
+in gemfile 
+
+    gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+     
+in app/models/user.rb
+
+    has_attached_file :avatar, styles: { medium: "300x300#", thumb: "100x100#" }, default_url: "profile.png"
+    validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
+in app/controllers/application_controller.rb
+
+    def configure_permitted_parameters
+      # to allow custom fields to save on devise database
+      added_attrs = [:username, :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :birthday, :location, :avatar]
+      devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+      devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+    end
+    
+## Randomize tips (tip of the day)
+in app/controllers/index_controller.rb
+
+     def index
+        #  find a random tip
+        offset = rand(Tip.count)
+        @tip = Tip.offset(offset).first
+      end
 
