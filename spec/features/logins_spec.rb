@@ -13,8 +13,8 @@ RSpec.feature "Logins", type: :feature do
     # these tests fail to activate button:
     # click_button "commit"
     # click_button 'submit'
-    find('input[name= "commit"]').click
     # find('input[value="Sign me up"]').click
+    find('input[name= "commit"]').click
 
     expect(page).to have_content "Signed in successfully"
   end
