@@ -2,6 +2,7 @@ require 'rspec'
 require 'rails_helper'
 require 'spec_helper'
 puts "------running Rspec in #{Rails.env} environment-------"
+puts "start of Sign-Up test"
 # require '../app/controllers/users_controller'
 
 RSpec.configure do |config|
