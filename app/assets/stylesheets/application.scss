@@ -365,7 +365,7 @@ body {
 }
 .tips {
   display: inline-block;
-  background-color: lightgrey;
+  background-color: $yellow-gold;
   border: 3px;
   border-radius: 10px;
   height: 300px;
@@ -387,7 +387,11 @@ body {
       background-color: white;
       font-size: 16px;
       height: 200px;
+      width: 100%;
+      border-radius: 10px;
       padding-right: 0;
+      margin-right: 0;
+
     }
     .pull-left {
       font-size: 16px;
@@ -395,6 +399,11 @@ body {
     }
     .col-sm-4 {
       margin-right: 0px;
+      padding-right: 5px;
+    }
+    img {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
     .pull-right {
       font-size: 14px;
@@ -450,6 +459,7 @@ body {
     font-size: 16px;
     height: 200px;
     padding-right: 0;
+    border-radius: 10px;
   }
   .pull-left {
     font-size: 14px;
@@ -457,6 +467,11 @@ body {
   }
   .col-sm-4 {
     margin-right: 0px;
+    padding-right: 5px;
+  }
+  img {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
   .pull-right {
     font-size: 14px;
