@@ -281,6 +281,7 @@ body {
 .profile {
   display: inline-block;
   margin-top: -50px;
+  margin-bottom: 50px;
   height: 100%;
   width: 100%;
   z-index: 100;
@@ -426,7 +427,7 @@ body {
   background-color: $black-grey;
   border: 3px;
   border-radius: 10px;
-  height: 350px;
+  height: 330px;
   margin: 10px;
   width: 100%;
   font-family: 'Nunito Sans', sans-serif;
@@ -499,6 +500,8 @@ body {
 // e d i t  p r o f i l e  p a g e
 .editprofile {
   font-family: 'Nunito Sans', sans-serif;
+  float: none;
+  clear: both;
   .profile-pic {
     margin-right: 15px;
   }
@@ -541,6 +544,9 @@ body {
   }
   .content {
     margin-top: 30px;
+    margin-bottom: 30px;
+    float: none;
+    clear: both;
   }
   #user_avatar {
     background-color: white;
@@ -855,8 +861,8 @@ body {
     text-transform: uppercase;
   }
   .tip-edit {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 31px;
     background-color: $yellow-gold;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
