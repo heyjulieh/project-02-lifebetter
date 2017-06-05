@@ -39,67 +39,78 @@ body {
    height: 250px;
    clear: both;
    z-index: 100;
-     span {
-       font-size: 16px;
-       margin-right: 10px;
-       a {
-         color: $yellow-gold;
-       }
-       a:hover {
-         text-decoration: none;
-         color: $light-grey;
-       }
+   span {
+     font-size: 16px;
+     margin-right: 10px;
+     a {
+       color: $yellow-gold;
      }
-     ul {
-       list-style-type: none;
+     a:hover {
+       text-decoration: none;
+       color: $light-grey;
      }
-     li {
-       display: inline-block;
+   }
+   .signup {
+     background-color: orange;
+   }
+   .signout {
+     background-color: $black-grey;
+     color: white;
+   }
+  .glyphicon {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+   ul {
+     list-style-type: none;
+   }
+   li {
+     display: inline-block;
+   }
+   .text-center {
+     margin-top: 20px;
+     a {
+       color: white;
      }
-     .text-center {
-       margin-top: 20px;
-       a {
-         color: white;
-       }
-       a:hover {
-         color: white;
-         text-decoration: none;
-       }
+     a:hover {
+       color: white;
+       text-decoration: none;
      }
-       .life {
-         font-family: 'Teko', sans-serif;
-         font-weight: 600;
-         font-size: 90px;
-         margin-right: 10px;
-       }
-       .better {
-         font-family: 'Quicksand', sans-serif;
-         font-weight: 200;
-         font-size: 80px;
-       }
-     .button_to {
-       margin: -50px 0px 0px 0px;
-       display: inline-block;
-       border-style: none;
-       padding: 10px 3px 10px 3px;
-       font-family: 'Nunito Sans', sans-serif;
-     }
-     input {
-       width: 100%;
-       margin: auto;
-       border-style: none;
-       padding: 10px;
-       font-family: 'Nunito Sans', sans-serif;
-       font-size: 12px;
-       color: $black-grey;
-       background-color: $yellow-gold;
-       text-transform: uppercase;
-     }
-     .pull-right {
-       display: inline-block;
-       margin-top: -25px;
-       margin-right: 10px;
-     }
+   }
+   .life {
+     font-family: 'Teko', sans-serif;
+     font-weight: 600;
+     font-size: 90px;
+     margin-right: 10px;
+   }
+   .better {
+     font-family: 'Quicksand', sans-serif;
+     font-weight: 200;
+     font-size: 80px;
+   }
+   .button_to {
+     margin: -50px 0px 0px 0px;
+     display: inline-block;
+     border-style: none;
+     padding: 10px 3px 10px 3px;
+     font-family: 'Nunito Sans', sans-serif;
+   }
+   input {
+     width: 100%;
+     margin: auto;
+     border-style: none;
+     padding: 10px;
+     font-family: 'Nunito Sans', sans-serif;
+     font-size: 12px;
+     color: $black-grey;
+     background-color: $yellow-gold;
+     text-transform: uppercase;
+   }
+   .pull-right {
+     display: inline-block;
+     margin-top: -25px;
+     margin-right: 10px;
+   }
 }
 .footer {
   bottom: 0;
