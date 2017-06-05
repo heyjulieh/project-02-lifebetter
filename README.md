@@ -56,7 +56,7 @@ then in terminal run: rspec
 
 
 
-# DEVISE
+### Devise
  ##### Devise is a popular authentication solution for Rails applications. It provides a full array of features, and can be configured to meet all, but the most unusual, requirements
  
 ##### Devise gem helped in this project to get the sign up and login page autheticated. It added additional features such as "Forgot Password", "Resend Email" and "Delete Account" together with many more
@@ -79,7 +79,7 @@ class ApplicationController < ActionController::Base
 end
 
 
-# Acts_as_votable Gem
+### Acts_as_votable Gem
 
 ##### We started off with thumbs_up for integrating our voting system but instead ended up using acts_as_votable gem which was   more simpler to integrate in our project. That also enabled us to use lesser code to get a similar functionality as           thumbs_up.
 ##### The acts_as _votable gem adds up and downvotes for an item or class that you want to be voted on. We set up routes : 
@@ -89,8 +89,8 @@ end
               put "dislike", to: "tips#downvote"
             end
 
-##### we incorporated the codes in our tips model and controller files. For showing the buttons on each tip, added codes on our tips/index.html.erb. 
-##### the acts_as_votable gem was restricted only to users who were logged in. the authorization part was taken off by Devise gem. 
+##### I incorporated the codes in our tips model and controller files. For showing the buttons on each tip, added codes on our tips/index.html.erb. 
+##### The acts_as_votable gem was restricted only to users who were logged in. the authorization part was taken off by Devise gem. 
 ##### It also allows one voter per user for one tip hence a user is not able to vote twice on the same tip.
 ##### Another feature of acts_as_votable is that if a tip receives a certain amount of negative votes(dislikes), the tip gets deleted.
 ##### The challenge in this gem was getting it to add counts without having to refresh the page everything.  we were however, able to accomplish that with a redirect method.
