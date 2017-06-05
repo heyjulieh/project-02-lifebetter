@@ -24,8 +24,9 @@ $sky-blue: #2D98DF;
 $life-red: #E92828;
 $dark-red: #d00a0a;
 
-html, body {
+body {
   height: 100%;
+  padding-top: 130px;
   input {
     background-color: $yellow-gold;
   }
@@ -36,14 +37,17 @@ html, body {
    background-color: $life-red;
    color: white;
    height: 250px;
-   width: 100%;
-   position: relative;
    clear: both;
+   z-index: 100;
      span {
        font-size: 16px;
        margin-right: 10px;
        a {
          color: $yellow-gold;
+       }
+       a:hover {
+         text-decoration: none;
+         color: $light-grey;
        }
      }
      ul {
@@ -106,21 +110,32 @@ html, body {
   background-color: $dark-grey;
   color: white;
   padding-top: 15px;
-  margin-top: 50px;
   position: relative;
   ul {
     list-style-type: none;
-    font-family: 'Nunito Sans', sans-serif;
+    padding-left: 15px;
   }
   a {
     color: white;
+    display: block;
+    border-bottom: 1px $yellow-gold;
+    font-family: 'Quicksand', sans-serif;
+  }
+  a:hover {
+    color: $yellow-gold;
+    text-decoration: none;
   }
   li {
     padding-top: 10px;
   }
   .pull-right {
     margin-right: 15px;
-    margin-top: -60px;
+    margin-top: -80px;
+  }
+  .small {
+    font-weight: 200;
+    display: inline-block;
+    margin-top: 20px;
   }
 }
 
@@ -151,7 +166,7 @@ html, body {
   }
 }
 .user-true {
-  margin-top: 20px;
+  margin-top: 150px;
   width: 100%;
   .row {
     margin-bottom: 30px;
@@ -193,6 +208,9 @@ html, body {
         font-size: 20px;
         font-weight: 400;
         font-family: 'Quicksand', sans-serif;
+      }
+      h5.pull-right {
+        margin-right: 10px;
       }
   }
   img {
@@ -238,13 +256,20 @@ html, body {
     margin: auto;
   }
 }
-
+@media only screen and (max-width: 926px) {
+    #sidebar {
+      display: none;
+    }
+}
 // n a v b a r
-.profile {
+.profile-user {
   display: inline-block;
-  margin: auto;
+  margin-top: -50px;
+  margin-bottom: 60px;
   height: 100%;
   width: 100%;
+  z-index: 100;
+  vertical-align: top;
   h1 {
     display: inline-block;
     font-family: 'Teko', sans-serif;
@@ -253,26 +278,42 @@ html, body {
     color: $sky-blue;
   }
 }
-.profile-sidebar {
-  padding: 15px 0 15px 0;
-  background: $life-red;
+.profile {
+  display: inline-block;
+  margin-top: -50px;
   height: 100%;
   width: 100%;
-  position: relative;
+  z-index: 100;
+  vertical-align: top;
+  h1 {
+    display: inline-block;
+    font-family: 'Teko', sans-serif;
+    font-size: 60px;
+    margin-left: 10px;
+    color: $sky-blue;
+  }
+}
+.profile-sidebar {
+  padding: 15px 0 15px 0;
+  width: 20%;
+  background: $life-red;
+  margin: auto;
   z-index: 150;
-  margin-top: -2px;
-    .profile-sidebar-scrolled {
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      top: 0;
-    }
+  max-height: 460px;
+}
+.profile-sidebar-genre {
+  padding: 15px 0 15px 0;
+  width: 20%;
+  margin-top: 100px;
+  background: $life-red;
+  margin: auto;
+  z-index: 150;
 }
 .profile-userpic img {
   float: none;
   margin: 0 auto;
-  width: 30%;
-  height: 30%;
+  width: 25%;
+  height: 25%;
   -webkit-border-radius: 50% !important;
   -moz-border-radius: 50% !important;
   border-radius: 50% !important;
@@ -298,12 +339,12 @@ html, body {
 // p r o f i l e  t i p s
 .tipsdiv {
   display: inline-block;
-  margin-top: auto;
+  margin: auto;
   h1 {
     font-family: 'Teko', sans-serif;
     font-weight: 500;
     font-size: 50px;
-    margin-left: 10px;
+    margin-left: 5px;
   }
 }
 .add_tip {
@@ -314,7 +355,7 @@ html, body {
     font-size: 16px;
     font-weight: 500;
     font-family: 'Quicksand', sans-serif;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 
   }
     a:hover{
@@ -380,10 +421,15 @@ html, body {
   margin: 10px;
   width: 100%;
   font-family: 'Nunito Sans', sans-serif;
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
   h3, p {
+    display: inline-block;
     color: white;
     margin-bottom: 15px;
-    margin-left: 10px;
+    margin-left: 5px;
   }
   p {
     font-family: 'Nunito Sans', sans-serif;
@@ -427,7 +473,7 @@ html, body {
   }
   a {
     display: inline-block;
-    color: $yellow-gold;
+    color: lightgrey;
     margin-right: 10px;
     a:hover {
       color: white;
@@ -438,13 +484,45 @@ html, body {
 // e d i t  p r o f i l e  p a g e
 .editprofile {
   font-family: 'Nunito Sans', sans-serif;
+  .profile-pic {
+    margin-right: 15px;
+  }
+  .profilepic {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  a {
+    color: $sky-blue;
+    display: inline-block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  a:hover {
+    color: grey;
+    text-decoration: none;
+  }
+  h1 {
+    font-family: 'Teko', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 50px;
+    display: block;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: $sky-blue;
+  }
   input {
     background-color: $yellow-gold;
     border-width: 0;
-    height:15px;
+    height:30px;
     padding: 20px;
     margin-bottom: 20px;
     width: 90%;
+  }
+  .actions {
+    height: 100px;
+    border-style: none;
   }
   .content {
     margin-top: 30px;
@@ -452,40 +530,61 @@ html, body {
   #user_avatar {
     background-color: white;
     font-family: 'Nunito Sans', sans-serif;
+    margin-left: 0;
   }
-  h1 {
+  img {
+    margin-top: 10px;
+  }
+  h2 {
+    color: $sky-blue;
+    font-weight: 800;
+    text-transform: capitalize;
     text-align: center
   }
   label {
-    margin: 0
+    margin-bottom: 5px;
+    font-family: 'Quicksand', sans-serif;
+  }
+  .pull-left {
+    float: none;
+    clear: both;
+    margin: 0;
+    padding-left: 0;
+    input[type="Submit"] {
+      height: 50px;
+      width: 150px;
+      font-family: 'Nunino Sans', sans-serif;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 300;
+      margin-top: 15px;
+      background-color: $sky-blue;
+      color: white;
+    }
   }
   .cancel {
+    font-size: 12px;
+    opacity: .65;
     margin-top: 20px;
-  }
-  input[type="Submit"] {
-    width: 100px;
-    height: 60px;
-    font-weight: 800;
-    font-size: 15px;
-    margin: 0;
-  }
-  .actions {
-    margin: 0;
-    text-align: center
-  }
-  .profilepic {
-    margin-top: 50px;
-    font-weight: 700
+    margin-left: 0px;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    clear: both;
+    padding-top: 0;
+    padding-left: 0;
+    float: none;
   }
 }
 
 // a b o u t  u s  p a g e
 .about-us {
+  margin-top: -50px;
   text-align: center;
   font-family: 'Nunito Sans', sans-serif;
   .bg {
     display: block;
-    height: 400px;
+    height: 450px;
     background-image: url(about.jpg);
     background-size: cover;
     width: 100%;
@@ -567,7 +666,7 @@ html, body {
   margin: auto;
   background-color: $life-red;
   color: white;
-  height: 60px;
+  height: 80px;
   span {
     font-size: 16px;
     margin-right: 10px;
@@ -584,6 +683,7 @@ html, body {
   .logo-left {
     float: left;
     margin-top: 5px;
+    margin-left: 10px;
     display: inline-block;
     p {
       display: inline-block;
@@ -591,14 +691,14 @@ html, body {
       }
     .life {
       font-family: 'Teko', sans-serif;
-      font-size: 40px;
+      font-size: 45px;
       margin-left: 10px;
       font-weight: 500;
     }
     .better {
       font-family: 'Quicksand';
-      font-size: 35px;
-      margin-left: 5px;
+      font-size: 40px;
+      margin-left: 10px;
       font-weight: 200;
     }
   }
@@ -610,9 +710,19 @@ html, body {
     text-decoration: none;
   }
   .dropbtn {
-    padding: 16px;
+    padding: 25px;
     font-size: 16px;
-    height: 60px;
+    height: 80px;
+    margin-left: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    p {
+      display: inline-block;
+      margin-top: 5px;
+    }
+    img {
+      margin-left: 10px;
+    }
   }
   .dropdown {
     position: relative;
@@ -622,8 +732,8 @@ html, body {
   .dropdown-content {
     display: none;
     position: absolute;
+    margin-left: 10px;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     a {
       background-color: $dark-red;
@@ -633,7 +743,8 @@ html, body {
       display: block
     }
     a:hover {
-      background-color: rgba(0,0,0,0.8);
+      background-color: $black-grey;
+      text-decoration: none
     }
   }
   .dropdown:hover .dropdown-content {
@@ -664,8 +775,15 @@ html, body {
 .tip {
   text-align: center;
   font-family: 'Nunito Sans', sans-serif;
+  margin-top: 160px;
+  margin-bottom: 40px;
   .row {
     margin-top: 40px;
+  }
+  h1 {
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase;
+    color: $sky-blue;
   }
   input, textarea {
     background-color: $yellow-gold;
@@ -688,7 +806,6 @@ html, body {
     margin: auto;
     background-color: $sky-blue;
     color: white;
-
   }
   select[name="tip[genre]"] {
     width: 150px;
@@ -700,27 +817,21 @@ html, body {
     padding: 10px;
   }
   .genre-select, .pic-select {
-    margin-top: 40px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    border: 2px solid $yellow-gold;
+    margin-bottom: 20px;
     overflow: hidden;
+    vertical-align: middle;
+    clear: both;
     #tip_avatar {
-      width: 60%;
-      margin: auto;
+      width: 70%;
+      margin-left: auto;
+      vertical-align: middle;
       text-align: center;
       background-color: $yellow-gold;
+      clear: both;
     }
   }
   .pic-select {
-    padding-bottom: 30px;
-    border: 2px solid $yellow-gold;
-    border-radius: 5px;
-    input[type="file"] {
-      background-color: $yellow-gold;
-      font-family: 'Nunito Sans', sans-serif;
-      padding-left: 40px;
-    }
+    padding-bottom: 10px;
   }
   .yellow {
     margin-top: 20px;
@@ -729,18 +840,29 @@ html, body {
     text-transform: uppercase;
   }
   .tip-edit {
-    padding-top: 38px;
-    padding-bottom: 37px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: $yellow-gold;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    a, .back {
+      color: white;
+      display: inline-block;
+      text-align: left;
+      padding-left: 10px;
+    }
+    a:hover {
+      text-decoration: none;
+      color: $sky-blue;
+    }
   }
   .content {
-    margin-top: 20px;
-    p {
-      font-weight: 700;
-      display: block
-    }
+    background-color: $yellow-gold;
+    border: 2px;
+    padding-top: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
     #tip_title {
       padding-top: 15px;
       background-color: white;
@@ -754,6 +876,115 @@ html, body {
     }
   }
   .back {
-    float: left
-   }
+    float: left;
+  }
+}
+
+// s i g n  u p / l o g  i n  f o r m
+
+.short-form {
+  height: 80vh;
+}
+.form-group {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 100px;
+  margin-bottom: 0;
+  width: 100%;
+  float: none;
+  padding: 40px;
+  background-color: $yellow-gold;
+  .profile-image {
+    margin: 20px;
+    padding: 10px;
+  }
+
+  h2 {
+    font-family:'Teko', sans-serif;
+    text-transform: uppercase;
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: $life-red;
+    text-align: center;
+  }
+  form {
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+    float: none;
+  }
+  #user_avatar {
+     text-align:center;
+     display:inline-block;
+     margin: auto;
+     padding-left: 90px;
+     width: 100%;
+     background-color: $yellow-gold;
+     padding-bottom: 30px;
+     padding-top: 10px;
+  }
+  label {
+    font-family:'Nunito Sans', sans-serif;
+    margin-bottom: 5px;
+  }
+  input {
+    background-color: white;
+    width: 250px;
+    border: none;
+    height: 35px;
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+  .field {
+    background-color: $yellow-gold;
+    padding: 5px;
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+  }
+  select {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: white;
+    border-radius: 0;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  input[type="Submit"] {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: $sky-blue;
+    color: white;
+    width: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .actions {
+    margin: 10px;
+  }
+  .reset-pw {
+    #user_email {
+      width: 330px;
+    }
+    input[type="Submit"] {
+      font-family: 'Nunito Sans', sans-serif;
+      background-color: $sky-blue;
+      color: white;
+      width: 330px;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+  }
+  .other-links {
+    a {
+      color: $sky-blue;
+      font-family: 'Nunito Sans', sans-serif;
+    }
+    a:hover {
+      color: $dark-grey;
+      text-decoration: none;
+    }
+  }
 }
