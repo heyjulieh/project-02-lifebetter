@@ -31,12 +31,3 @@ describe UsersController, :type => :controller do
     expect(response).to render_template(:index)  # index is route for homepage
   end
 end
-
-# describe “GET index” do
-#   it “assigns @users” do
-#     user = FactoryGirl.create(:user)
-#     get :index
-#     expect(assigns(:users)).to eq([user])
-
-#   end
-# end
