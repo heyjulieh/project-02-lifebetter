@@ -113,17 +113,29 @@ body {
   position: relative;
   ul {
     list-style-type: none;
-    font-family: 'Nunito Sans', sans-serif;
+    padding-left: 15px;
   }
   a {
     color: white;
+    display: block;
+    border-bottom: 1px $yellow-gold;
+    font-family: 'Quicksand', sans-serif;
+  }
+  a:hover {
+    color: $yellow-gold;
+    text-decoration: none;
   }
   li {
     padding-top: 10px;
   }
   .pull-right {
     margin-right: 15px;
-    margin-top: -60px;
+    margin-top: -80px;
+  }
+  .small {
+    font-weight: 200;
+    display: inline-block;
+    margin-top: 20px;
   }
 }
 
@@ -197,6 +209,9 @@ body {
         font-weight: 400;
         font-family: 'Quicksand', sans-serif;
       }
+      h5.pull-right {
+        margin-right: 10px;
+      }
   }
   img {
     text-align: center;
@@ -250,6 +265,7 @@ body {
 .profile-user {
   display: inline-block;
   margin-top: -50px;
+  margin-bottom: 60px;
   height: 100%;
   width: 100%;
   z-index: 100;
@@ -273,7 +289,7 @@ body {
     display: inline-block;
     font-family: 'Teko', sans-serif;
     font-size: 60px;
-    margin-left: 22px;
+    margin-left: 10px;
     color: $sky-blue;
   }
 }
@@ -283,6 +299,7 @@ body {
   background: $life-red;
   margin: auto;
   z-index: 150;
+  max-height: 460px;
 }
 .profile-sidebar-genre {
   padding: 15px 0 15px 0;
@@ -295,8 +312,8 @@ body {
 .profile-userpic img {
   float: none;
   margin: 0 auto;
-  width: 30%;
-  height: 30%;
+  width: 25%;
+  height: 25%;
   -webkit-border-radius: 50% !important;
   -moz-border-radius: 50% !important;
   border-radius: 50% !important;
@@ -320,9 +337,6 @@ body {
 }
 
 // p r o f i l e  t i p s
-.min-margin {
-  min-width: 200px;
-}
 .tipsdiv {
   display: inline-block;
   margin: auto;
@@ -330,7 +344,7 @@ body {
     font-family: 'Teko', sans-serif;
     font-weight: 500;
     font-size: 50px;
-    margin-left: 10px;
+    margin-left: 5px;
   }
 }
 .add_tip {
@@ -341,7 +355,7 @@ body {
     font-size: 16px;
     font-weight: 500;
     font-family: 'Quicksand', sans-serif;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 
   }
     a:hover{
@@ -528,7 +542,7 @@ body {
     text-align: center
   }
   label {
-    margin: 0;
+    margin-bottom: 5px;
     font-family: 'Quicksand', sans-serif;
   }
   .pull-left {
@@ -549,6 +563,8 @@ body {
     }
   }
   .cancel {
+    font-size: 12px;
+    opacity: .65;
     margin-top: 20px;
     margin-left: 0px;
     width: 100%;
@@ -563,11 +579,12 @@ body {
 
 // a b o u t  u s  p a g e
 .about-us {
+  margin-top: -50px;
   text-align: center;
   font-family: 'Nunito Sans', sans-serif;
   .bg {
     display: block;
-    height: 400px;
+    height: 450px;
     background-image: url(about.jpg);
     background-size: cover;
     width: 100%;
@@ -759,6 +776,7 @@ body {
   text-align: center;
   font-family: 'Nunito Sans', sans-serif;
   margin-top: 160px;
+  margin-bottom: 40px;
   .row {
     margin-top: 40px;
   }
@@ -822,8 +840,8 @@ body {
     text-transform: uppercase;
   }
   .tip-edit {
-    padding-top: 30px;
-    padding-bottom: 29px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: $yellow-gold;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -862,8 +880,11 @@ body {
   }
 }
 
-// s i g n  u p  f o r m
+// s i g n  u p / l o g  i n  f o r m
 
+.short-form {
+  height: 80vh;
+}
 .form-group {
   display: inline-block;
   text-align: center;
@@ -878,12 +899,14 @@ body {
     margin: 20px;
     padding: 10px;
   }
+
   h2 {
     font-family:'Teko', sans-serif;
     text-transform: uppercase;
     font-size: 50px;
     margin-bottom: 30px;
     color: $life-red;
+    text-align: center;
   }
   form {
     display: inline-block;
@@ -903,12 +926,15 @@ body {
   }
   label {
     font-family:'Nunito Sans', sans-serif;
+    margin-bottom: 5px;
   }
   input {
     background-color: white;
     width: 250px;
     border: none;
     height: 35px;
+    margin-left: 10px;
+    padding-left: 10px;
   }
   .field {
     background-color: $yellow-gold;
@@ -937,65 +963,28 @@ body {
   .actions {
     margin: 10px;
   }
+  .reset-pw {
+    #user_email {
+      width: 330px;
+    }
+    input[type="Submit"] {
+      font-family: 'Nunito Sans', sans-serif;
+      background-color: $sky-blue;
+      color: white;
+      width: 330px;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+  }
+  .other-links {
+    a {
+      color: $sky-blue;
+      font-family: 'Nunito Sans', sans-serif;
+    }
+    a:hover {
+      color: $dark-grey;
+      text-decoration: none;
+    }
+  }
 }
-
-// l o g i n
-
-// .form {
-//   background-color: $yellow-gold;
-//   margin-bottom: 15px;
-//   display: block;
-//   width: 100%;
-// }
-// .field {
-//   background-color: white;
-//   margin-bottom: 30px;
-//   display: block;
-//   width: 40%;
-//   h2 {
-//     font-family:'Nunito Sans', sans-serif;
-//     margin-bottom: 30px;
-//   }
-//   #user_username {
-//    background-color: $yellow-gold;
-//    }
-//   #user_password {
-//   background-color: $yellow-gold;
-//    }
-//   #user_remember_me {
-//   text-color: $life-red;
-//   }
-// }
-//
-//
-//
-// // for comment template
-//
-// .comments-header {
-//  border-bottom: 1px dotted gray;
-//  margin-bottom: 10px;
-// }
-//
-// .comments-container {
-//  p {
-//    margin-bottom: 0px;
-//  }
-//  .comment-nav {
-//    margin-left: 5px;
-//    margin-bottom: 10px;
-//
-//    a {
-//      font-size: 10px;
-//      font-weight: bold;
-//      color: #888;
-//    }
-//  }
-// }
-//
-// .reply-form {
-//  display: none;
-// }
-//
-// .comments-show {
-//  margin-left: 25px;
-// }

@@ -33,6 +33,8 @@
               %a{:href => "/genres/travel"}
                 Travel
     .col-sm-9.col-md-9.col-lg-9
+      - if request.original_fullpath == '/genres/art'
+        %h1.art ART
       - if request.original_fullpath == '/genres/beauty'
         %h1.beauty BEAUTY
       - if request.original_fullpath == '/genres/health'
@@ -51,7 +53,7 @@
                 %h3
                   = tip.title
                 %p
-                  by 
+                  by
                   = link_to tip.user.username, user_path(tip.user)
                 .container-fluid.content
                   .col-sm-8
