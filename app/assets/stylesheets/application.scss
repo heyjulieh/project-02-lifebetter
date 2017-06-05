@@ -110,7 +110,6 @@ body {
   background-color: $dark-grey;
   color: white;
   padding-top: 15px;
-  margin-top: 50px;
   position: relative;
   ul {
     list-style-type: none;
@@ -408,10 +407,15 @@ body {
   margin: 10px;
   width: 100%;
   font-family: 'Nunito Sans', sans-serif;
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
   h3, p {
+    display: inline-block;
     color: white;
     margin-bottom: 15px;
-    margin-left: 10px;
+    margin-left: 5px;
   }
   p {
     font-family: 'Nunito Sans', sans-serif;
@@ -455,7 +459,7 @@ body {
   }
   a {
     display: inline-block;
-    color: $yellow-gold;
+    color: lightgrey;
     margin-right: 10px;
     a:hover {
       color: white;
@@ -754,6 +758,7 @@ body {
 .tip {
   text-align: center;
   font-family: 'Nunito Sans', sans-serif;
+  margin-top: 160px;
   .row {
     margin-top: 40px;
   }
@@ -856,3 +861,141 @@ body {
     float: left;
   }
 }
+
+// s i g n  u p  f o r m
+
+.form-group {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 100px;
+  margin-bottom: 0;
+  width: 100%;
+  float: none;
+  padding: 40px;
+  background-color: $yellow-gold;
+  .profile-image {
+    margin: 20px;
+    padding: 10px;
+  }
+  h2 {
+    font-family:'Teko', sans-serif;
+    text-transform: uppercase;
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: $life-red;
+  }
+  form {
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+    float: none;
+  }
+  #user_avatar {
+     text-align:center;
+     display:inline-block;
+     margin: auto;
+     padding-left: 90px;
+     width: 100%;
+     background-color: $yellow-gold;
+     padding-bottom: 30px;
+     padding-top: 10px;
+  }
+  label {
+    font-family:'Nunito Sans', sans-serif;
+  }
+  input {
+    background-color: white;
+    width: 250px;
+    border: none;
+    height: 35px;
+  }
+  .field {
+    background-color: $yellow-gold;
+    padding: 5px;
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+  }
+  select {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: white;
+    border-radius: 0;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  input[type="Submit"] {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: $sky-blue;
+    color: white;
+    width: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .actions {
+    margin: 10px;
+  }
+}
+
+// l o g i n
+
+// .form {
+//   background-color: $yellow-gold;
+//   margin-bottom: 15px;
+//   display: block;
+//   width: 100%;
+// }
+// .field {
+//   background-color: white;
+//   margin-bottom: 30px;
+//   display: block;
+//   width: 40%;
+//   h2 {
+//     font-family:'Nunito Sans', sans-serif;
+//     margin-bottom: 30px;
+//   }
+//   #user_username {
+//    background-color: $yellow-gold;
+//    }
+//   #user_password {
+//   background-color: $yellow-gold;
+//    }
+//   #user_remember_me {
+//   text-color: $life-red;
+//   }
+// }
+//
+//
+//
+// // for comment template
+//
+// .comments-header {
+//  border-bottom: 1px dotted gray;
+//  margin-bottom: 10px;
+// }
+//
+// .comments-container {
+//  p {
+//    margin-bottom: 0px;
+//  }
+//  .comment-nav {
+//    margin-left: 5px;
+//    margin-bottom: 10px;
+//
+//    a {
+//      font-size: 10px;
+//      font-weight: bold;
+//      color: #888;
+//    }
+//  }
+// }
+//
+// .reply-form {
+//  display: none;
+// }
+//
+// .comments-show {
+//  margin-left: 25px;
+// }
