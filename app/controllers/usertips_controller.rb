@@ -14,10 +14,10 @@ class UsertipsController < ApplicationController
     @tip = Tip.create(tip_params)
     if @tip.save
       @user.tips << @tip
-      redirect_to user_path(@user)
       flash[:notice] = "Tip successfully saved!"
+      redirect_to user_path(@user)
     else
-      flash[:error] = @tip.errors.full.messages.join(" ")
+      flash[:error] = @tip.errors.full_messages.join(" ")
       render :new
     end
   end

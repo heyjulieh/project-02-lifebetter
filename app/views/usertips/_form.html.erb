@@ -2,11 +2,11 @@
 <%= form_for @tip, url: create_user_tip_path, method: "create" do |f| %>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-4 col-md-4 col-md-offset-2 col-sm-offset-2">
+      <div class="col-sm-4 col-md-4 col-md-offset-2 col-sm-offset-2 tip-edit">
         <%= link_to "Back", :back, class: "back"  %>
         <div class="genre-select">
           <p class="yellow">Pick a Genre</p>
-          <%= f.select :genre, ['art', 'beauty', 'health', 'food', 'home', 'travel'] %>
+          <%= f.select :genre, ['art', 'beauty', 'food', 'health', 'home', 'travel'] %>
         </div>
         <div class="pic-select">
           <p class="yellow">Choose a Picture</p>
@@ -14,11 +14,10 @@
         </div>
       </div>
       <div class="col-sm-4 col-md-4 content">
-        <p>Title</p>
+        <p class ="yellow">Title</p>
         <%= f.text_field :title, placeholder: "Title" %>
-        <p>Enter your tip here</p>
+        <p class = "yellow">Enter your tip here</p>
         <%= f.text_area :content, placeholder: "Enter your tip here!", rows: "5" %>
-
       </div>
     </div>
     <div class="row">

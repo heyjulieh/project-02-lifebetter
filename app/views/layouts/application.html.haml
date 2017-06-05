@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Lifebetter
+    %title Life better
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -11,8 +11,8 @@
       .footer
         %ul
           %li
-            =link_to "ABOUT", about_path
-          %li CONTACT US
-          %li JJAM x GA 2017 / all rights reserved
+            =link_to "ABOUT US", about_path
+          %br
+          %li.small JJAM x GA 2017 © all rights reserved
         .pull-right
           = image_tag('logo.png', height: '50')
