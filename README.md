@@ -72,15 +72,6 @@ then in terminal run: rspec
 
 
 
-# For future Project
-
-
-## Adding comments
-##### Again we started with researching for the commentator gem but will probably use acts_as_commentable with threading for our project’s needs. 
-##### Again acts_as_comemntable with threading gem is simpler to add. It does require a comment template where it is able to render all comments with replies. 
-##### The acts_as_commentable gem works well with acts_as _votable and the two are easier to integrate in a project. This gem also counts the of comments per tip. In the future, we hope to render our comments on the genre page with threaded comments
-
-
 ## Paperclip
 
 ### Allows users to upload photos. We added this to our User and Tip model.
@@ -113,3 +104,15 @@ in app/controllers/index_controller.rb
         @tip = Tip.offset(offset).first
       end
 
+
+
+# For future Project
+
+## Adding comments
+##### Again we started with researching for the commentator gem but will probably use acts_as_commentable with threading for our project’s needs. 
+##### Again acts_as_comemntable with threading gem is simpler to add. It does require a comment template where it is able to render all comments with replies. 
+##### The acts_as_commentable gem works well with acts_as _votable and the two are easier to integrate in a project. This gem also counts the of comments per tip. In the future, we hope to render our comments on the genre page with threaded comments
+
+
+## Full testing of app 
+### So far there are three tests, to show some possibilies of rspec testing.
