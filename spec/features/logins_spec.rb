@@ -5,7 +5,7 @@ RSpec.feature "Logins", type: :feature do
   tip_test = Tip.create(genre: "test_genre", title: "test_title", important: true, user_id: 1)
 
   it "user can log in", :type => :feature do
-    puts "start of log in test"
+    puts "start of log in test (./spec/features/logins_spec.rb)"
     visit '/users/sign_in'    # route to GET TO login:
     fill_in "user_username", with: "testman"
     fill_in 'user_password', with: "123456"
