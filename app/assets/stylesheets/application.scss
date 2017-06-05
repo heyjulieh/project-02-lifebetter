@@ -706,6 +706,13 @@ body {
       color: $yellow-gold;
     }
   }
+  .flash_message {
+    display: inline-block;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 30px;
+    font-family: 'Nunito Sans', sans-serif;
+  }
   ul {
     list-style-type: none;
   }
