@@ -63,20 +63,21 @@ then in terminal run: rspec
 
 ##### It also helped restrict certain actions as well. Devise can be customized as well. See below the code that helped our project with restrict access.
 
-class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+    class ApplicationController < ActionController::Base
+        protect_from_forgery with: :exception
 
-  before_action :configure_permitted_parameters, if: :devise_controller?
+        before_action :configure_permitted_parameters, if: :devise_controller?
 
-  protected
+        protected
 
-  def configure_permitted_parameters
-    # to allow custom fields to save on devise database
-    added_attrs = [:username, :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :birthday, :location, :avatar]
-    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
-    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
-  end
-end
+        def configure_permitted_parameters
+          # to allow custom fields to save on devise database
+            added_attrs = [:username, :email, :password, :password_confirmation, :remember_me, :first_name, :last_name,     
+            :birthday, :location, :avatar]
+            devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+            devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+        end
+     end
 
 
 ### Acts_as_votable Gem
