@@ -24,7 +24,7 @@ Things you may want to cover:
 * ...
 # Acts_as_votable Gem
 
-##### We started off with thumbs_up for integrating our voting system but instead ended up using acts_as_votable gem which was   more simpler to integrate in our project. 
+##### We started off with thumbs_up for integrating our voting system but instead ended up using acts_as_votable gem which was   more simpler to integrate in our project. That also enabled us to use lesser code to get a similar functionality as           thumbs_up.
 ##### The acts_as _votable gem adds up and downvotes for an item or class that you want to be voted on. We set up routes : 
             resources :tips do
              member do
