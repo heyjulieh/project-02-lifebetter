@@ -1,5 +1,5 @@
 <header>
-  <div class="jumbotron-small">
+  <div class="jumbotron-small navbar-fixed-top">
     <div class="logo-left">
       <a href="/"><p class="life">LIFE</p><p class="better">better</p></a>
     </div>
@@ -12,6 +12,12 @@
         <div class="dropdown-content">
           <%= link_to "View Profile", user_path(current_user) %>
           <%= link_to "Settings", edit_user_registration_path(current_user) %>
+          <%= link_to "Art", '/genres/art' %>
+          <%= link_to "Beauty", '/genres/beauty' %>
+          <%= link_to "Food", '/genres/food' %>
+          <%= link_to "Health", '/genres/health' %>
+          <%= link_to "Home", '/genres/home' %>
+          <%= link_to "Travel", '/genres/travel' %>
           <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
         </div>
       <% else %>

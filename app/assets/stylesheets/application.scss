@@ -24,8 +24,9 @@ $sky-blue: #2D98DF;
 $life-red: #E92828;
 $dark-red: #d00a0a;
 
-html, body {
+body {
   height: 100%;
+  padding-top: 130px;
   input {
     background-color: $yellow-gold;
   }
@@ -36,14 +37,17 @@ html, body {
    background-color: $life-red;
    color: white;
    height: 250px;
-   width: 100%;
-   position: relative;
    clear: both;
+   z-index: 100;
      span {
        font-size: 16px;
        margin-right: 10px;
        a {
          color: $yellow-gold;
+       }
+       a:hover {
+         text-decoration: none;
+         color: $light-grey;
        }
      }
      ul {
@@ -151,7 +155,7 @@ html, body {
   }
 }
 .user-true {
-  margin-top: 20px;
+  margin-top: 150px;
   width: 100%;
   .row {
     margin-bottom: 30px;
@@ -238,13 +242,34 @@ html, body {
     margin: auto;
   }
 }
-
+@media only screen and (max-width: 926px) {
+    #sidebar {
+      display: none;
+    }
+}
 // n a v b a r
-.profile {
+.profile-user {
   display: inline-block;
-  margin: auto;
+  margin-top: -50px;
   height: 100%;
   width: 100%;
+  z-index: 100;
+  vertical-align: top;
+  h1 {
+    display: inline-block;
+    font-family: 'Teko', sans-serif;
+    font-size: 60px;
+    margin-left: 22px;
+    color: $sky-blue;
+  }
+}
+.profile {
+  display: inline-block;
+  margin-top: -50px;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  vertical-align: top;
   h1 {
     display: inline-block;
     font-family: 'Teko', sans-serif;
@@ -255,18 +280,18 @@ html, body {
 }
 .profile-sidebar {
   padding: 15px 0 15px 0;
+  width: 20%;
   background: $life-red;
-  height: 100%;
-  width: 100%;
-  position: relative;
+  margin: auto;
   z-index: 150;
-  margin-top: -2px;
-    .profile-sidebar-scrolled {
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      top: 0;
-    }
+}
+.profile-sidebar-genre {
+  padding: 15px 0 15px 0;
+  width: 20%;
+  margin-top: 100px;
+  background: $life-red;
+  margin: auto;
+  z-index: 150;
 }
 .profile-userpic img {
   float: none;
@@ -296,9 +321,12 @@ html, body {
 }
 
 // p r o f i l e  t i p s
+.min-margin {
+  min-width: 200px;
+}
 .tipsdiv {
   display: inline-block;
-  margin-top: auto;
+  margin: auto;
   h1 {
     font-family: 'Teko', sans-serif;
     font-weight: 500;
@@ -438,13 +466,45 @@ html, body {
 // e d i t  p r o f i l e  p a g e
 .editprofile {
   font-family: 'Nunito Sans', sans-serif;
+  .profile-pic {
+    margin-right: 15px;
+  }
+  .profilepic {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  a {
+    color: $sky-blue;
+    display: inline-block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  a:hover {
+    color: grey;
+    text-decoration: none;
+  }
+  h1 {
+    font-family: 'Teko', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 50px;
+    display: block;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: $sky-blue;
+  }
   input {
     background-color: $yellow-gold;
     border-width: 0;
-    height:15px;
+    height:30px;
     padding: 20px;
     margin-bottom: 20px;
     width: 90%;
+  }
+  .actions {
+    height: 100px;
+    border-style: none;
   }
   .content {
     margin-top: 30px;
@@ -452,30 +512,48 @@ html, body {
   #user_avatar {
     background-color: white;
     font-family: 'Nunito Sans', sans-serif;
+    margin-left: 0;
   }
-  h1 {
+  img {
+    margin-top: 10px;
+  }
+  h2 {
+    color: $sky-blue;
+    font-weight: 800;
+    text-transform: capitalize;
     text-align: center
   }
   label {
-    margin: 0
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+  }
+  .pull-left {
+    float: none;
+    clear: both;
+    margin: 0;
+    padding-left: 0;
+    input[type="Submit"] {
+      height: 50px;
+      width: 150px;
+      font-family: 'Nunino Sans', sans-serif;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 300;
+      margin-top: 15px;
+      background-color: $sky-blue;
+      color: white;
+    }
   }
   .cancel {
     margin-top: 20px;
-  }
-  input[type="Submit"] {
-    width: 100px;
-    height: 60px;
-    font-weight: 800;
-    font-size: 15px;
-    margin: 0;
-  }
-  .actions {
-    margin: 0;
-    text-align: center
-  }
-  .profilepic {
-    margin-top: 50px;
-    font-weight: 700
+    margin-left: 0px;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    clear: both;
+    padding-top: 0;
+    padding-left: 0;
+    float: none;
   }
 }
 
@@ -567,7 +645,7 @@ html, body {
   margin: auto;
   background-color: $life-red;
   color: white;
-  height: 60px;
+  height: 80px;
   span {
     font-size: 16px;
     margin-right: 10px;
@@ -584,6 +662,7 @@ html, body {
   .logo-left {
     float: left;
     margin-top: 5px;
+    margin-left: 10px;
     display: inline-block;
     p {
       display: inline-block;
@@ -591,14 +670,14 @@ html, body {
       }
     .life {
       font-family: 'Teko', sans-serif;
-      font-size: 40px;
+      font-size: 45px;
       margin-left: 10px;
       font-weight: 500;
     }
     .better {
       font-family: 'Quicksand';
-      font-size: 35px;
-      margin-left: 5px;
+      font-size: 40px;
+      margin-left: 10px;
       font-weight: 200;
     }
   }
@@ -610,9 +689,19 @@ html, body {
     text-decoration: none;
   }
   .dropbtn {
-    padding: 16px;
+    padding: 25px;
     font-size: 16px;
-    height: 60px;
+    height: 80px;
+    margin-left: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    p {
+      display: inline-block;
+      margin-top: 5px;
+    }
+    img {
+      margin-left: 10px;
+    }
   }
   .dropdown {
     position: relative;
@@ -622,8 +711,8 @@ html, body {
   .dropdown-content {
     display: none;
     position: absolute;
+    margin-left: 10px;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     a {
       background-color: $dark-red;
@@ -633,7 +722,8 @@ html, body {
       display: block
     }
     a:hover {
-      background-color: rgba(0,0,0,0.8);
+      background-color: $black-grey;
+      text-decoration: none
     }
   }
   .dropdown:hover .dropdown-content {
@@ -667,6 +757,11 @@ html, body {
   .row {
     margin-top: 40px;
   }
+  h1 {
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase;
+    color: $sky-blue;
+  }
   input, textarea {
     background-color: $yellow-gold;
     border-width: 0;
@@ -688,7 +783,6 @@ html, body {
     margin: auto;
     background-color: $sky-blue;
     color: white;
-
   }
   select[name="tip[genre]"] {
     width: 150px;
@@ -700,27 +794,21 @@ html, body {
     padding: 10px;
   }
   .genre-select, .pic-select {
-    margin-top: 40px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    border: 2px solid $yellow-gold;
+    margin-bottom: 20px;
     overflow: hidden;
+    vertical-align: middle;
+    clear: both;
     #tip_avatar {
-      width: 60%;
-      margin: auto;
+      width: 70%;
+      margin-left: auto;
+      vertical-align: middle;
       text-align: center;
       background-color: $yellow-gold;
+      clear: both;
     }
   }
   .pic-select {
-    padding-bottom: 30px;
-    border: 2px solid $yellow-gold;
-    border-radius: 5px;
-    input[type="file"] {
-      background-color: $yellow-gold;
-      font-family: 'Nunito Sans', sans-serif;
-      padding-left: 40px;
-    }
+    padding-bottom: 10px;
   }
   .yellow {
     margin-top: 20px;
@@ -729,18 +817,29 @@ html, body {
     text-transform: uppercase;
   }
   .tip-edit {
-    padding-top: 38px;
-    padding-bottom: 37px;
+    padding-top: 30px;
+    padding-bottom: 29px;
     background-color: $yellow-gold;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    a, .back {
+      color: white;
+      display: inline-block;
+      text-align: left;
+      padding-left: 10px;
+    }
+    a:hover {
+      text-decoration: none;
+      color: $sky-blue;
+    }
   }
   .content {
-    margin-top: 20px;
-    p {
-      font-weight: 700;
-      display: block
-    }
+    background-color: $yellow-gold;
+    border: 2px;
+    padding-top: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
     #tip_title {
       padding-top: 15px;
       background-color: white;
@@ -754,6 +853,6 @@ html, body {
     }
   }
   .back {
-    float: left
-   }
+    float: left;
+  }
 }

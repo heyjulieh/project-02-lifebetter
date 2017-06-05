@@ -1,12 +1,10 @@
-
 = render ('/layouts/smallnav')
 -# Navbar Start
 .container-fluid
   .row.profile
     .col-sm-3.col-md-3.col-lg-3
-      .profile-sidebar
+      .profile-sidebar.nav-stacked.affix#sidebar
         -# User Pic
-
         .profile-userpic
           - if !current_user.nil?
             %a{:href => "/users/#{current_user.username}"}
@@ -16,6 +14,9 @@
             - if !current_user.nil?
               = link_to "Add New Tip", new_user_tip_path(current_user)
           %ul.nav
+            %li
+              %a{:href => "/genres/art"}
+                Art
             %li
               %a{:href => "/genres/beauty"}
                 Beauty
@@ -31,17 +32,17 @@
             %li
               %a{:href => "/genres/travel"}
                 Travel
-    - if request.original_fullpath == '/genres/beauty'
-      %h1.beauty BEAUTY
-    - if request.original_fullpath == '/genres/health'
-      %h1.health HEALTH
-    - if request.original_fullpath == '/genres/food'
-      %h1.food FOOD
-    - if request.original_fullpath == '/genres/home'
-      %h1.home HOME
-    - if request.original_fullpath == '/genres/travel'
-      %h1.travel TRAVEL
-    .col-sm-9.col-md-9.col-lg-9.tipsdiv
+    .col-sm-9.col-md-9.col-lg-9
+      - if request.original_fullpath == '/genres/beauty'
+        %h1.beauty BEAUTY
+      - if request.original_fullpath == '/genres/health'
+        %h1.health HEALTH
+      - if request.original_fullpath == '/genres/food'
+        %h1.food FOOD
+      - if request.original_fullpath == '/genres/home'
+        %h1.home HOME
+      - if request.original_fullpath == '/genres/travel'
+        %h1.travel TRAVEL
       - @tips.each do |tip|
         .container-fluid.alltips
           .row
@@ -54,7 +55,8 @@
                   = link_to tip.user.username, user_path(tip.user)
                 .container-fluid.content
                   .col-sm-8
-                    = tip.content
+                    .pull-left
+                      = tip.content
                   .col-sm-4
                     .pull-right
                       = image_tag tip.avatar.url, height:"190px"
