@@ -3,6 +3,11 @@
     <div class="logo-left">
       <a href="/"><p class="life">LIFE</p><p class="better">better</p></a>
     </div>
+    <span class= "flash_message">
+    <% flash.each do |name, msg| %>
+        <%= msg %>
+      <% end %>
+    </span>
     <div class="pull-right dropdown">
       <% if signed_in? %>
         <div class="dropbtn">
@@ -26,9 +31,4 @@
       <% end %>
     </div>
   </div>
-  <span>
-  <% flash.each do |name, msg| %>
-      <%= msg %>
-    <% end %>
-  </span>
 </header>
