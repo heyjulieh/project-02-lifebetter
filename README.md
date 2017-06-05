@@ -54,6 +54,31 @@ Writing these tests required me to learn the different commands available are te
 * To run the test suite, may need to first run in terminal: gem install capybara:2.7.1
 then in terminal run: rspec
 
+
+
+# DEVISE
+ ##### Devise is a popular authentication solution for Rails applications. It provides a full array of features, and can be configured to meet all, but the most unusual, requirements
+ 
+##### Devise gem helped in this project to get the sign up and login page autheticated. It added additional features such as "Forgot Password", "Resend Email" and "Delete Account" together with many more
+
+##### It also helped restrict certain actions as well. Devise can be customized as well. See below the code that helped our project with restrict access.
+
+class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    # to allow custom fields to save on devise database
+    added_attrs = [:username, :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :birthday, :location, :avatar]
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+  end
+end
+
+
 # Acts_as_votable Gem
 
 ##### We started off with thumbs_up for integrating our voting system but instead ended up using acts_as_votable gem which was   more simpler to integrate in our project. That also enabled us to use lesser code to get a similar functionality as           thumbs_up.
