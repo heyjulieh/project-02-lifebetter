@@ -28,9 +28,9 @@ Things you may want to cover:
 ##### The acts_as _votable gem adds up and downvotes for an item or class that you want to be voted on. We set up routes : 
             resources :tips do
              member do
-            put "like", to: "tips#upvote"
-            put "dislike", to: "tips#downvote"
-         end
+              put "like", to: "tips#upvote"
+              put "dislike", to: "tips#downvote"
+            end
 
 ##### we incorporated the codes in our tips model and controller files. For showing the buttons on each tip, added codes on our tips/index.html.erb. 
 ##### the acts_as_votable gem was restricted only to users who were logged in. the authorization part was taken off by Devise gem. 
