@@ -114,5 +114,5 @@ in app/controllers/index_controller.rb
 ##### The acts_as_commentable gem works well with acts_as _votable and the two are easier to integrate in a project. This gem also counts the of comments per tip. In the future, we hope to render our comments on the genre page with threaded comments
 
 
-## Full testing of app 
-### So far there are three tests, to show some possibilies of rspec testing.
+### Full testing of app 
+#### So far there are three tests, to show some possibilies of rspec testing.
